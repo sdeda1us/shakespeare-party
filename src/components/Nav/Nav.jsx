@@ -4,6 +4,15 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import styled from 'styled-components';
+
+const NavBanner = styled.div `
+  width: 100%;
+  background-color: 
+  #ED60E8;
+  overflow: hidden;
+`
+
 
 const Nav = (props) => {
   let loginLinkData = {
@@ -17,12 +26,12 @@ const Nav = (props) => {
   }
 
   return (
-    <div className="nav">
+    <NavBanner>
       <Link to="/home">
-        <h2 className="nav-title">Prime Solo Project</h2>
+        <h2>Prime Solo Project</h2>
       </Link>
-      <div className="nav-right">
-        <Link className="nav-link" to={loginLinkData.path}>
+      <div >
+        <Link to={loginLinkData.path}>
           {/* Show this link if they are logged in or not,
           but call this link 'Home' if they are logged in,
           and call this link 'Login / Register' if they are not */}
@@ -31,18 +40,18 @@ const Nav = (props) => {
         {/* Show the link to the info page and the logout button if the user is logged in */}
         {props.store.user.id && (
           <>
-            <Link className="nav-link" to="/info">
+            <Link  to="/info">
               Info Page
             </Link>
-            <LogOutButton className="nav-link" />
+            <LogOutButton  />
           </>
         )}
         {/* Always show this link since the about page is not protected */}
-        <Link className="nav-link" to="/about">
+        <Link  to="/about">
           About
         </Link>
       </div>
-    </div>
+    </NavBanner>
   );
 };
 
