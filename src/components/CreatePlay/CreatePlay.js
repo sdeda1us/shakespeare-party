@@ -4,7 +4,12 @@ import React from 'react';
 function CreatePlay() {
 
     return(
-        <p>Hello from create play</p>
+        <div>
+            <label>Select Play from the List below</label>
+            <select>
+                
+            </select>
+        </div>
     )
 }
 
