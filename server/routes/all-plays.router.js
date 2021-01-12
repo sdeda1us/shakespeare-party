@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   let sqlText = `SELECT * from shakespeare_plays`;
   pool.query(sqlText)
   .then(result => {res.send(result.rows)})
-  .catch(error => console.log('error retrieving play list', error));
+  .catch(error => console.log('error retrieving play list', error))
 });
 
 /**

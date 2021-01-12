@@ -14,6 +14,7 @@
 
 ## Cleanup considerations
 [ ] - code comments
+[ ] - error handling
 [ ] - destructuring code to mkae it more DRY
 [ ] - variable name consisnecy for easier following of code
 [ ] - mess about with style/appearance - clean -professional

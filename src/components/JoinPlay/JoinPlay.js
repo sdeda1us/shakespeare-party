@@ -2,8 +2,13 @@ import React from 'react';
 
 function JoinPlay() {
 
+
     return(
-        <p>Hello from Join Play</p>
+        <div>
+            <div>
+
+            </div>
+        </div>
     )
 }
 

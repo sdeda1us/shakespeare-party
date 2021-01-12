@@ -5,7 +5,11 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
+  const sqlText = `SELECT * from play_event WHERE join_code=$1;`;
+  pool.query(sqlText, [req.params.id])
+  .then(result => res.send(result.rows))
+  .catch(error => console.log('error retrieving play list', error))
 });
 
 /**
