@@ -7,18 +7,23 @@
 [ ] Retrieve list of roles
 [ ] Retrieve list of actors
 [ ] Update director status in the play
-[ ] Update actors connection to troupe
+[x] Update actors connection to troupe
 [ ] Update acotrs' roles in the play as taken/removed
 [ ] Delete actors from troupe
 [ ] Delete instances of play events
 
+# Main Objectives - Pages
+[ ] Login and conditional routing
+[ ] Fix the Navbar so it display links conditionally 
 
 ## Cleanup considerations
 [ ] - code comments
+[ ] - responsiveness
 [ ] - error handling
 [ ] - destructuring code to mkae it more DRY
 [ ] - variable name consisnecy for easier following of code
 [ ] - mess about with style/appearance - clean -professional
 [ ] - make readme look good
+[ ] - .js to .jsx
 [ ] - export and delete this file when completed 
 

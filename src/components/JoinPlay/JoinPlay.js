@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function JoinPlay() {
-    //defines dispatch function
+    //defines dispatch and usehistory functions
     const dispatch = useDispatch();
+    const history = useHistory();
     //defines value of form inputs in state
     const [inputCode, setInputCode] = useState(0);
     //loads from redux store
@@ -19,9 +21,10 @@ function JoinPlay() {
             console.log(troupe.join_code, inputCode);
             if (troupe.join_code==inputCode){
                 dispatch({type: 'UPDATE_USER', payload: {inputCode, userId}})
-                //TO DO - Navigate to dashboard
+                history.push('/dashboard');
             }
         })
+        alert('Error! Code does not match, please try again');
     }
 
     return(

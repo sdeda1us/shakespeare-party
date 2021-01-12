@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 
 function CreatePlay() {
     //defines dispatch function
     const dispatch = useDispatch();
+    const history = useHistory();
     //defines value of form inputs in state
     const [troupeName, setTroupeName] = useState('');
     const [playChoice, setPlayChoice] = useState(0);
@@ -20,7 +22,7 @@ function CreatePlay() {
         const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: userID, joinCode:joinCode};
         console.log(formPacket);
         dispatch({type: 'POST_PLAY_EVENT', payload: formPacket});
-        //TO-DO navigate to PLAY DASHBOARD ON SUBMIT
+        history.push('/admin');
     }
 
     return(
