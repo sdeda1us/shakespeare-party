@@ -4,6 +4,7 @@ import axios from 'axios';
 export default function* playEventSaga() {
     yield takeLatest('POST_PLAY_EVENT', postPlayEvent);
     yield takeLatest('FETCH_PLAY_EVENT', fetchPlayEvent);
+    yield takeLatest('FETCH_ALL_PLAY_EVENTS', fetchAllPlayEvents);
 }
 
 function* postPlayEvent (action) {
@@ -20,6 +21,15 @@ function* fetchPlayEvent (action) {
         const response = yield call(axios.get, `/api/play-event/${action.payload.joinCode}`);
         yield put({type: 'SET_PLAY_EVENT', payload: response.data});
     }  catch(error) {
+        console.log('error retrieving play instance', error);
+    }
+}
+
+function* fetchAllPlayEvents (action) {
+    try {
+        const response = yield call(axios.get, `/api/play-event`);
+        yield put({type: 'SET_ALL_PLAY_EVENTS', payload: response.data});
+    } catch(error) {
         console.log('error retrieving play instance', error);
     }
 }

@@ -47,4 +47,13 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200);
 });
 
+router.put('/:id', (req, res) => {
+  console.log(req.params.id, req.body.inputCode);
+  let sqlText = `UPDATE "user" SET troupe_code=$1 WHERE id=$2;`;
+  pool.query(sqlText, [req.body.inputCode, req.params.id])
+  .then(() => res.sendStatus(200))
+  .catch((error) => console.log('error updating user troupe id', error))
+})
+
+
 module.exports = router;

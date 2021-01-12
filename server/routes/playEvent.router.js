@@ -12,6 +12,13 @@ router.get('/:id', (req, res) => {
   .catch(error => console.log('error retrieving play list', error))
 });
 
+router.get('/', (req, res) => {
+  const sqlText = `SELECT * from play_event;`;
+  pool.query(sqlText)
+  .then(result => res.send(result.rows))
+  .catch(error => console.log('error retrieving play list', error))
+});
+
 /**
  * POST route template
  */

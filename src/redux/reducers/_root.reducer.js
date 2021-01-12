@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import allPlays from './allPlays.reducer';
 import playEvent from './playEvent.reducer';
+import allPlayEvents from './allPlayEvents.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   allPlays, //list of plays for select play dropdown option
   playEvent,
+  allPlayEvents,
 });
 
 export default rootReducer;
