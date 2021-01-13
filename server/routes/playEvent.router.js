@@ -2,6 +2,17 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
+
+router.delete('/', (req, res) => {
+  const joinCode = req.body.joinCode;
+  const sqlText = `DELETE FROM play_event WHERE join_code=$1;`;
+  pool.query(sqlText, [joinCode])
+  .then(result => {res.sendStatus(201)})
+  .catch(error => {
+    console.log('error updating users info after delete', error);
+    res.sendStatus(500);
+  })  
+})
 /**
  * GET route template
  */
@@ -32,7 +43,19 @@ router.post('/', (req, res) => {
     console.log('error posting new play instance', error);
     res.sendStatus(500);
   })
-
 });
+
+router.put('/', (req, res) => {
+  const joinCode = req.body.joinCode;
+  console.log(joinCode);
+  const sqlText = `UPDATE "user" SET troupe_code=NULL WHERE troupe_code=$1;`;
+  pool.query(sqlText, [joinCode])
+  .then(result => {res.sendStatus(201)})
+  .catch(error => {
+    console.log('error updating users info after delete', error);
+    res.sendStatus(500);
+})
+});
+
 
 module.exports = router;

@@ -32,9 +32,19 @@ function* updateUser(action) {
   }
 }
 
+function* fetchPlayers(action) {
+  try {
+    const response = yield call(axios.get, `api/user/${action.payload.joinCode}`, action.payload);
+    yield put({type: 'SET_PLAYERS', payload:response.data});
+  } catch(error) {
+    console.log('error retrieving cast list', error);
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('UPDATE_USER', updateUser);
+  yield takeLatest('FETCH_PLAYERS', fetchPlayers);
 }
 
 export default userSaga;

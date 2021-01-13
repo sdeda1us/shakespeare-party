@@ -10,7 +10,8 @@ function CreatePlay() {
     //defines value of form inputs in state
     const [troupeName, setTroupeName] = useState('');
     const [playChoice, setPlayChoice] = useState(0);
-    const joinCode = Math.floor(Math.random() * (99999 - 10000) + 10000);
+    const inputCode = Math.floor(Math.random() * (99999 - 10000) + 10000);
+    const userId = useSelector(state => state.user.id)
     //loads from redux store
     const userID = useSelector(state => state.user.id);
     const playList = useSelector(state=> state.allPlays);
@@ -19,9 +20,10 @@ function CreatePlay() {
 
     const submit = (event) => {
         event.preventDefault();
-        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: userID, joinCode:joinCode};
+        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: userID, joinCode:inputCode};
         console.log(formPacket);
         dispatch({type: 'POST_PLAY_EVENT', payload: formPacket});
+        dispatch({type: 'UPDATE_USER', payload: {inputCode, userId}})
         history.push('/admin');
     }
 

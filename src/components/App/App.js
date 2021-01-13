@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Admin from '../Admin/Admin';
+import DashBoard from '../DashBoard/DashBoard';
 
 import './App.css';
 
@@ -96,6 +97,9 @@ class App extends Component {
             />
             <ProtectedRoute path="/admin"
               component={Admin}
+            />
+            <ProtectedRoute path="/dashboard"
+              component={DashBoard}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
