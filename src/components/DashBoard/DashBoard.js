@@ -11,7 +11,6 @@ export default function DashBoard() {
     //loads from redux store
     const playMeta = useSelector(state => state.playMeta);
     const userInfo = useSelector(state => state.user);
-    // const joinCode = playMeta.map((p)=>p.join_code);
     const castList = useSelector(state => state.players);
     useEffect(() => {
         dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}});
@@ -19,9 +18,13 @@ export default function DashBoard() {
         }, []);
     return(
         <div>
-            <p>Troupe Name: {playMeta.map((p) => (p.troupe_name))}</p>
-            <p>Performing: {playMeta.map((p) => (p.play_name))} </p>
-            
+            <div>
+                <p>Troupe Name: {playMeta.map((p) => (p.troupe_name))}</p>
+                <p>Performing: {playMeta.map((p) => (p.play_name))} </p>
+            </div>
+            <div>
+                {castList.map((actor) => (<ul key={actor.id}>{actor.username}</ul>))}
+            </div>
         </div>
     )
 }

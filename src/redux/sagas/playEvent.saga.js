@@ -28,7 +28,8 @@ function* deletePlayEvent(action) {
 
 function* deleteTroupe(action) {
     try {
-        yield call(axios.delete, `api/play-event`, action.payload);
+        console.log('join_code=', action.payload.joinCode)
+        yield call(axios.delete, `api/play-event/${action.payload.joinCode}`);
     }catch(error){
         console.log('error deleting play event', error);
     }

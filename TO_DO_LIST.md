@@ -5,12 +5,12 @@
 [ ] Create roles to fill
 [x] Retrieve list of shakespeare's plays
 [ ] Retrieve list of roles
-[ ] Retrieve list of actors
+[x] Retrieve list of actors
 [ ] Update director status in the play
 [x] Update actors connection to troupe
-[ ] Update acotrs' roles in the play as taken/removed
-[ ] Delete actors from troupe
-[ ] Delete instances of play events
+[ ] Update actors' roles in the play as taken/removed
+[x] Delete actors from troupe
+[x] Delete instances of play events
 
 # Main Objectives - Pages
 [ ] Login and conditional routing

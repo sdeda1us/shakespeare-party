@@ -12,12 +12,17 @@ export default function Admin() {
     //loads from redux store
     const playMeta = useSelector(state => state.playMeta);
     const userInfo = useSelector(state => state.user);
+    
+    
     //populate redux data on page load
-    useEffect(() => {dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}})}, []);
+    useEffect(() => {dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}})
+    }, []);
 
     const deletePlayEvent = (event) => {
         alert('You are about to delete your play event, is this what you want?');
-        dispatch({type: 'DELETE_TROUPE', payload: {joinCode: userInfo.troupe_code}});
+        const joinCode = playMeta.map((p)=>p.join_code);
+        console.log('joinCode is', joinCode);
+        dispatch({type: 'DELETE_TROUPE', payload: {joinCode: joinCode[0]}});
         dispatch({type: 'DELETE_PLAY_EVENT', payload: {joinCode: userInfo.troupe_code}});
     }
 
