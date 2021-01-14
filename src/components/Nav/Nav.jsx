@@ -11,44 +11,77 @@ const NavBanner = styled.div `
   background-color: yellow;
   overflow: hidden;
   margin-bottom: 30px;
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: no-wrap;
+`
+const LinkText= styled.p `
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
 `
 
+
 const Nav = (props) => {
+  const directorId= props.store.playMeta.map((p)=>(p.director_id));
+
   let loginLinkData = {
     path: '/login',
     text: 'Login / Register',
   };
 
   if (props.store.user.id != null) {
-    loginLinkData.path = '/user';
+    loginLinkData.path = '/';
     loginLinkData.text = 'Home';
+  }
+
+  let homeLink = {
+    path: '/home',
+    text: 'Home'
+  }
+
+  if(props.store.user.id != null && props.store.user.troupe_code != null) {
+    homeLink.path = '/dashboard';
+    homeLink.text= 'Actor Dashboard';
   }
 
   return (
     <NavBanner>
-      <Link to="/home">
-        <h2>Prime Solo Project</h2>
-      </Link>
-      <div >
-        <Link to={loginLinkData.path}>
-          {/* Show this link if they are logged in or not,
-          but call this link 'Home' if they are logged in,
-          and call this link 'Login / Register' if they are not */}
-          {loginLinkData.text}
+      <div>
+        <Link to={homeLink.path}>
+          <LinkText>{homeLink.text}</LinkText>
         </Link>
-        {/* Show the link to the info page and the logout button if the user is logged in */}
-        {props.store.user.id && (
-          <>
+      </div>
+      
+      {/* Show the link to the info page and the logout button if the user is logged in */}
+      {props.store.user.id && (
+        <>
+        <div>
             <Link  to="/info">
-              Info Page
+              <LinkText>Info Page</LinkText>
             </Link>
-            <LogOutButton  />
-          </>
+       </div>
+        
+        </>
         )}
+      <div>
         {/* Always show this link since the about page is not protected */}
         <Link  to="/about">
-          About
+          <LinkText>About</LinkText>
         </Link>
+      </div>
+     
+      {props.store.user.id==directorId ? 
+        <div>
+          <Link  to="/admin">
+            <LinkText>Director Admin</LinkText>
+          </Link>
+        </div> 
+        : <div></div>
+      }
+      <div>
+        <LinkText><LogOutButton  /></LinkText> 
       </div>
     </NavBanner>
   );

@@ -8,6 +8,14 @@ const MainSpace = styled.div `
     margin: auto;
     background-color: white;
 `
+const TopSpace = styled.div `
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+`
+const TopInfo = styled.div `
+    font-size: 25px;
+`
 
 export default function DashBoard() {
     //defines dispatch and usehistory functions
@@ -24,10 +32,10 @@ export default function DashBoard() {
         }, []);
     return(
         <MainSpace>
-            <div>
-                <p>Troupe Name: {playMeta.map((p) => (p.troupe_name))}</p>
-                <p>Performing: {playMeta.map((p) => (p.play_name))} </p>
-            </div>
+            <TopSpace>
+                <TopInfo>Troupe Name: {playMeta.map((p) => (p.troupe_name))}</TopInfo>
+                <TopInfo>Performing: {playMeta.map((p) => (p.play_name))} </TopInfo>
+            </TopSpace>
             <div>
                 {castList.map((actor) => (<ul key={actor.id}>{actor.username}</ul>))}
             </div>
