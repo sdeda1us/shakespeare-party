@@ -8,11 +8,10 @@ import styled from 'styled-components';
 
 const NavBanner = styled.div `
   width: 100%;
-  background-color: 
-  #ED60E8;
+  background-color: yellow;
   overflow: hidden;
+  margin-bottom: 30px;
 `
-
 
 const Nav = (props) => {
   let loginLinkData = {

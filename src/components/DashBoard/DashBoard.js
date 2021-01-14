@@ -1,7 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import styled from 'styled-components';
 
+const MainSpace = styled.div `
+    width: 95%; 
+    margin: auto;
+    background-color: white;
+`
 
 export default function DashBoard() {
     //defines dispatch and usehistory functions
@@ -17,7 +23,7 @@ export default function DashBoard() {
         dispatch({type: 'FETCH_PLAYERS', payload: {joinCode: userInfo.troupe_code}});
         }, []);
     return(
-        <div>
+        <MainSpace>
             <div>
                 <p>Troupe Name: {playMeta.map((p) => (p.troupe_name))}</p>
                 <p>Performing: {playMeta.map((p) => (p.play_name))} </p>
@@ -28,6 +34,6 @@ export default function DashBoard() {
             <div>
                 
             </div>
-        </div>
+        </MainSpace>
     )
 }

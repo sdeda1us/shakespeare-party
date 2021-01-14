@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import styled from 'styled-components';
+
+const PinkForm = styled.form `
+  color: white;
+  background-color: #ED60E8;
+  border-radius: 5px;
+`
+const YellowButton = styled.input `
+  background-color: yellow;
+  color: black;
+`
 
 class LoginForm extends Component {
   state = {
@@ -32,7 +43,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form className="formPanel" onSubmit={this.login}>
+      <PinkForm className="formPanel" onSubmit={this.login}>
         <h2>Login</h2>
         {this.props.store.errors.loginMessage && (
           <h3 className="alert" role="alert">
@@ -64,9 +75,9 @@ class LoginForm extends Component {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Log In" />
+          <YellowButton className="btn" type="submit" name="submit" value="Log In" />
         </div>
-      </form>
+      </PinkForm>
     );
   }
 }
