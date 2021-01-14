@@ -34,9 +34,7 @@ export default function Admin() {
 
     return (
         <MainSpace>
-            <div>
-                <h1>Hi from Admin!</h1>
-            </div>
+            <h2>Director Administration Page</h2>
             <div>
                 <p>Troupe Name: {playMeta.map((p)=>p.troupe_name)}</p>
                 <button>Edit</button>
