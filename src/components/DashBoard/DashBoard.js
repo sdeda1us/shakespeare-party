@@ -25,6 +25,9 @@ export default function DashBoard() {
             <div>
                 {castList.map((actor) => (<ul key={actor.id}>{actor.username}</ul>))}
             </div>
+            <div>
+                
+            </div>
         </div>
     )
 }
