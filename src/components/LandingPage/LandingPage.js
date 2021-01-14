@@ -18,12 +18,13 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>Let's Bard-y Like its 1599!</h2>
+      <div className="container main-space">
+        
 
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <img src='./birmingham-museums-trust-L2sbcLBJwOc-unsplash.jpg'/>
+             <h2 className="fun-header">Let's Bard-y Like its 1599!</h2>
+            <img className="bard-bust" src="images/birmingham-museums-trust-L2sbcLBJwOc-unsplash.jpg" alt="shakespeare bust"/>
           </div>
           <div className="grid-col grid-col_4">
             <RegisterForm />
