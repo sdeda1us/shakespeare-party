@@ -78,3 +78,32 @@ Grid
   flex-basis: 100%;
   max-width: 100%;
 }
+
+
+/* --------------------------------------------------------------------------------
+Styling
+-------------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap');
+
+.bard-bust{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1000px;
+}
+
+.fun-header{
+  color: rgb(238, 238, 11);
+  text-align: center;
+  font-family: 'Calligraffitti', cursive;
+  font-size: 40px;
+}
+
+.main-space{
+  width: 95%;
+  margin: auto;
+  color: white;
+  background-color: black;
+}
+
