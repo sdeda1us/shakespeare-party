@@ -2,7 +2,13 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import ManageActor from '../ManageActor/ManageActor';
+import styled from 'styled-components';
 
+const MainSpace = styled.div `
+    width: 95%; 
+    margin: auto;
+    background-color: white;
+`
 
 export default function Admin() {
     //defines dispatch and usehistory functions
@@ -27,7 +33,7 @@ export default function Admin() {
     }
 
     return (
-        <div>
+        <MainSpace>
             <div>
                 <h1>Hi from Admin!</h1>
             </div>
@@ -41,6 +47,6 @@ export default function Admin() {
             <div>
                 <button onClick={(event)=>deletePlayEvent(event)}>Delete This Play Event</button>
             </div>
-        </div>
+        </MainSpace>
     )
 }

@@ -29,7 +29,6 @@ function CreatePlay() {
 
     return(
         <div>
-            {JSON.stringify(playChoice)}
             <form onSubmit={(event) => submit(event)}>
                 <label>Create name for your troop of mirthful players!</label>
                 <input type="text" onChange={(event) => setTroupeName(event.target.value)}/>

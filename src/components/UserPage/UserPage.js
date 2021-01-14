@@ -7,6 +7,12 @@ import JoinPlay from '../JoinPlay/JoinPlay';
 import styled from 'styled-components';
 
 //-------------------------------Styled Components--------------------------//
+const MainSpace = styled.div `
+    width: 95%; 
+    margin: auto;
+    background-color: white;
+`
+
 const ChoiceFont = styled.h2 `
   @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
   text-align: center;
@@ -45,7 +51,7 @@ function UserPage() {
   // this component doesn't do much to start, just renders some user info to the DOM
   const [display, setDisplay] = useState(true);
     return (
-      <div>
+      <MainSpace>
         <ChoiceRow>
           <ChoiceBox onClick={(event)=>{setDisplay(true)}}>
             <ChoiceFont >To Create a Play</ChoiceFont>
@@ -60,7 +66,7 @@ function UserPage() {
         <HeaderFont>That is the question!</HeaderFont>
         {display ? <CreatePlay/> : <JoinPlay/>}
         <LogOutButton className="log-in" />
-      </div>
+      </MainSpace>
     );
   }
 

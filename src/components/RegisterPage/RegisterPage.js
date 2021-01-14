@@ -4,6 +4,12 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
+import styled from 'styled-components';
+
+const FancyLink = styled.span `
+  font: 40px;
+  color: #ED60E8;
+`
 
 class RegisterPage extends Component {
   state = {
@@ -24,7 +30,7 @@ class RegisterPage extends Component {
               this.props.history.push('/login');
             }}
           >
-            Login
+            <FancyLink>Already Registered? Login</FancyLink>
           </button>
         </center>
       </div>

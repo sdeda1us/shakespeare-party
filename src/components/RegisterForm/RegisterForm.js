@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import styled from 'styled-components';
+
+const FormBox = styled.form `
+  background-color: yellow;
+  color: black;
+  border-radius: 5px;
+`
+const RegButton = styled.input `
+  background-color: #ED60E8;
+`
 
 class RegisterForm extends Component {
   state = {
@@ -28,7 +38,7 @@ class RegisterForm extends Component {
 
   render() {
     return (
-      <form className="formPanel" onSubmit={this.registerUser}>
+      <FormBox className="formPanel" onSubmit={this.registerUser}>
         <h2>Register User</h2>
         {this.props.store.errors.registrationMessage && (
           <h3 className="alert" role="alert">
@@ -60,9 +70,9 @@ class RegisterForm extends Component {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Register" />
+          <RegButton className="btn" type="submit" name="submit" value="Register" />
         </div>
-      </form>
+      </FormBox>
     );
   }
 }

@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import LoginForm from '../LoginForm/LoginForm';
+import styled from 'styled-components';
+
+const FancyLink = styled.span `
+  font: 40px;
+  color: yellow;
+`
 
 class LoginPage extends Component {
   render() {
@@ -17,7 +23,7 @@ class LoginPage extends Component {
               this.props.history.push('/registration');
             }}
           >
-            Register
+            <FancyLink>Go Back to Register Instead</FancyLink>
           </button>
         </center>
       </div>
