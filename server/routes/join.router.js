@@ -16,11 +16,15 @@ router.get('/:id', (req, res) => {
   .catch(error => console.log('error retrieving play list', error))
 });
 
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-  // POST route code here
-});
+router.put('/', (req, res) => {
+  console.log(req.body);
+  let sqlText = `UPDATE play_event SET director_id=$1 WHERE join_code=$2;`;
+  pool.query(sqlText, [req.body.director, req.body.joinCode])
+  .then(result => {res.sendStatus(201)})
+  .catch(error => {
+    console.log('error updating troupe name', error);
+    res.sendStatus(500);
+  })
+})
 
 module.exports = router;
