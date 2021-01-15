@@ -17,7 +17,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-  console.log(req.body);
   let sqlText = `UPDATE play_event SET director_id=$1 WHERE join_code=$2;`;
   pool.query(sqlText, [req.body.director, req.body.joinCode])
   .then(result => {res.sendStatus(201)})
