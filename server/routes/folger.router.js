@@ -8,6 +8,7 @@ const folger = require('../controller/fetchingfolger');
  * GET route template
  */
 router.get('/', (req, res) => {
+console.log(req.body);   
 scraper('https://folgerdigitaltexts.org/H5/charText/')  
   .then(result => {res.send(result)})
   .catch(error => console.log('error retrieving play list', error))
@@ -34,7 +35,6 @@ const scraper = async(url) => {
     for(i=2; i < words.length; i=i+2){
         wordCount.push(words[i]);
     }
-    console.log('charachters', characters, 'words', wordCount)
     return {characters: characters, wordCount: wordCount};
 }
 /**

@@ -7,6 +7,7 @@ export default function* playEventSaga() {
     yield takeLatest('FETCH_ALL_PLAY_EVENTS', fetchAllPlayEvents);
     yield takeLatest('DELETE_PLAY_EVENT', deletePlayEvent);
     yield takeLatest('DELETE_TROUPE', deleteTroupe);
+    yield takeLatest('EDIT_TROUPE_NAME', editTroupeName);
 }
 
 function* postPlayEvent (action) {
@@ -28,10 +29,17 @@ function* deletePlayEvent(action) {
 
 function* deleteTroupe(action) {
     try {
-        console.log('join_code=', action.payload.joinCode)
-        yield call(axios.delete, `api/play-event/${action.payload.joinCode}`);
+        yield call(axios.delete, `/api/play-event/${action.payload.joinCode}`);
     }catch(error){
         console.log('error deleting play event', error);
+    }
+}
+
+function* editTroupeName(action) {
+    try{
+        yield call(axios.put, `/api/play-event/${action.payload.joinCode}`, action.payload);
+    }catch (error) {
+
     }
 }
 

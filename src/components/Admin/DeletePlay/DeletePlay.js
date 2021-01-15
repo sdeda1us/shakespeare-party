@@ -1,6 +1,21 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import styled from 'styled-components';
 
+const MenuButton = styled.button `
+    padding: 5%;
+    width: 80%;
+    margin: 5% 5% 0% 5%;
+    border: 3px solid black;
+    background-color: red;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+`
+const TextDisplay = styled.p `
+    font-size: 30px;
+    text-align: center;
+`
 
 
 
@@ -8,19 +23,20 @@ export default function DeletePlay() {
 
     const deletePlayEvent = (event) => {
         alert('You are about to delete your play event, is this what you want?');
-        const joinCode = playMeta.map((p)=>p.join_code);
+        const joinCode = playMeta.join_code;
         console.log('joinCode is', joinCode);
         dispatch({type: 'DELETE_TROUPE', payload: {joinCode: joinCode[0]}});
         dispatch({type: 'DELETE_PLAY_EVENT', payload: {joinCode: userInfo.troupe_code}});
     }
-    
+
     const dispatch = useDispatch();
     const playMeta = useSelector(state => state.playMeta);
     const userInfo = useSelector(state => state.user);
     
     return (
         <div>
-            <button onClick={(event)=>deletePlayEvent(event)}>Delete This Play Event</button>
+            <TextDisplay>WARNING! This will delete your play and reset memberships for all actors and the director.</TextDisplay>
+            <MenuButton onClick={(event)=>deletePlayEvent(event)}>Delete This Play Event</MenuButton>
         </div>
     )
 

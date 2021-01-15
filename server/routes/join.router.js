@@ -12,7 +12,7 @@ router.get('/:id', (req, res) => {
                 WHERE pe.join_code = $1
                 ;`;
   pool.query(sqlText, [req.params.id])
-  .then(result => {res.send(result.rows)})
+  .then(result => {res.send(result.rows[0])})
   .catch(error => console.log('error retrieving play list', error))
 });
 
