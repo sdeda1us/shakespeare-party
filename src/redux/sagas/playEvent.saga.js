@@ -8,6 +8,7 @@ export default function* playEventSaga() {
     yield takeLatest('DELETE_PLAY_EVENT', deletePlayEvent);
     yield takeLatest('DELETE_TROUPE', deleteTroupe);
     yield takeLatest('EDIT_TROUPE_NAME', editTroupeName);
+    yield takeLatest('UPDATE_DIRECTOR', updateDirector);
 }
 
 function* postPlayEvent (action) {
@@ -39,7 +40,7 @@ function* editTroupeName(action) {
     try{
         yield call(axios.put, `/api/play-event/${action.payload.joinCode}`, action.payload);
     }catch (error) {
-
+        console.log('error changing troupe name', error)
     }
 }
 
@@ -58,5 +59,14 @@ function* fetchAllPlayEvents (action) {
         yield put({type: 'SET_ALL_PLAY_EVENTS', payload: response.data});
     } catch(error) {
         console.log('error retrieving play instance', error);
+    }
+}
+
+function* updateDirector(action) {
+    try{
+
+        yield call(axios.put, `/api/join/`, action.payload);
+    }catch (error) {
+        console.log('error changing director', error);
     }
 }

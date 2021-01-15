@@ -58,7 +58,6 @@ router.put('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  console.log(req.params.id, req.body.name);
   let sqlText = `UPDATE play_event SET troupe_name=$1 WHERE join_code=$2;`;
   pool.query(sqlText, [req.body.name, req.params.id])
   .then(result => {res.sendStatus(201)})
@@ -67,5 +66,7 @@ router.put('/:id', (req, res) => {
     res.sendStatus(500);
   })
 })
+
+
 
 module.exports = router;
