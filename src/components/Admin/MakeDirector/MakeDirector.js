@@ -9,7 +9,6 @@ export default function ManageActor() {
                     <tr>
                         <th>Actor</th>
                         <th>Make Director</th>
-                        <th>Delete</th>
                     </tr>
                 </thead>
             </table>
