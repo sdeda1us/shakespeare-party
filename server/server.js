@@ -13,6 +13,7 @@ const userRouter = require('./routes/user.router');
 const allPlaysRouter = require('./routes/all-plays.router');
 const playEventRouter = require('./routes/playEvent.router');
 const joinRouter = require('./routes/join.router');
+const folgerRouter = require('./routes/folger.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -30,6 +31,7 @@ app.use('/api/user', userRouter);
 app.use('/api/all-plays', allPlaysRouter);
 app.use('/api/play-event', playEventRouter);
 app.use('/api/join', joinRouter);
+app.use('/api/folger', folgerRouter);
 
 // Serve static files
 app.use(express.static('build'));

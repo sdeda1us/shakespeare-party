@@ -21,14 +21,18 @@ export default function DashBoard() {
     //defines dispatch and usehistory functions
     const dispatch = useDispatch();
     const history = useHistory();
-
+    let tableZip = [];
     //loads from redux store
     const playMeta = useSelector(state => state.playMeta);
     const userInfo = useSelector(state => state.user);
     const castList = useSelector(state => state.players);
+    const characters = useSelector(state=> state.folger.characters);
+    const words = useSelector(state => state.folger.wordCount);
+    if(characters) {tableZip = characters.map((c, i) => {return {character: c, wordCount: words[i]}});};
     useEffect(() => {
         dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}});
         dispatch({type: 'FETCH_PLAYERS', payload: {joinCode: userInfo.troupe_code}});
+        dispatch({type: 'FETCH_CHARTEXT'});
         }, []);
     return(
         <MainSpace>
@@ -36,11 +40,11 @@ export default function DashBoard() {
                 <TopInfo>Troupe Name: {playMeta.map((p) => (p.troupe_name))}</TopInfo>
                 <TopInfo>Performing: {playMeta.map((p) => (p.play_name))} </TopInfo>
             </TopSpace>
+                    
             <div>
-                {castList.map((actor) => (<ul key={actor.id}>{actor.username}</ul>))}
-            </div>
-            <div>
-                
+                <table>
+                    {tableZip ? tableZip.map((t) => <tr><td>{t.character}</td><td>{t.wordCount}</td></tr>) : <tr><td>no role data</td></tr>}
+                </table>
             </div>
         </MainSpace>
     )
