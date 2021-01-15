@@ -7,8 +7,8 @@ function* folgerMetaSaga() {
 
 function* fetchCharText(action) {
     try {
-        const response = yield call(axios.get, `/api/folger/`, action.payload);
-        console.log('folgerMeta CHATEXT action.payload', action.payload.playCode);
+        console.log('folgerMeta CHATEXT action.payload', action.payload);
+        const response = yield call(axios.get, `/api/folger/${action.payload.playCode}`);
         yield put({type: 'SET_CHARACTERS', payload: response.data});
     } catch(error){
         console.log('error retrieving list of plays', error);

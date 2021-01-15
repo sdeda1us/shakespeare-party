@@ -47,7 +47,10 @@ const MenuButton = styled.button `
     font-size: 30px;
     border-radius: 10px;
 `
-
+const TextDisplay = styled.p `
+    font-size: 30px;
+    text-align: center;
+`
 
 export default function Admin() {
     //defines dispatch and usehistory functions
@@ -81,7 +84,7 @@ export default function Admin() {
                     <div><MenuButton onClick={()=>setViewChoice(5)}>Delete Troupe</MenuButton></div>
                 </MenuSide>
                 <ViewSide>
-                    {viewChoice === 0 ? <p>Choose an option from the menu</p>: 
+                    {viewChoice === 0 ? <TextDisplay>Choose an option from the menu</TextDisplay>: 
                             viewChoice === 1 ? <JoinCode/> :
                                 viewChoice == 2 ? <RenameTroupe/> :
                                     viewChoice === 3 ? <p>viewChoice is 3</p> :

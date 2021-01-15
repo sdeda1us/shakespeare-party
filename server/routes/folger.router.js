@@ -7,9 +7,9 @@ const folger = require('../controller/fetchingfolger');
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
-console.log(req.body);   
-scraper('https://folgerdigitaltexts.org/H5/charText/')  
+router.get('/:id', (req, res) => {
+console.log(req.params);   
+scraper(`https://folgerdigitaltexts.org/${req.params.id}/charText/`)  
   .then(result => {res.send(result)})
   .catch(error => console.log('error retrieving play list', error))
 });
