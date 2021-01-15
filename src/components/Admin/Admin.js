@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import ManageActor from '../ManageActor/ManageActor';
+import MakeDirector from './MakeDirector/MakeDirector';
+import JoinCode from './JoinCode/JoinCode';
+import RenameTroupe from './RenameTroupe/RenameTroupe';
+import DeletePlay from './DeletePlay/DeletePlay';
 import styled from 'styled-components';
 
 const MainSpace = styled.div `
@@ -60,14 +63,7 @@ export default function Admin() {
     useEffect(() => {dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}})
     }, []);
 
-    const deletePlayEvent = (event) => {
-        alert('You are about to delete your play event, is this what you want?');
-        const joinCode = playMeta.map((p)=>p.join_code);
-        console.log('joinCode is', joinCode);
-        dispatch({type: 'DELETE_TROUPE', payload: {joinCode: joinCode[0]}});
-        dispatch({type: 'DELETE_PLAY_EVENT', payload: {joinCode: userInfo.troupe_code}});
-    }
-
+    
     return (
         <MainSpace>
             <Header>
@@ -83,23 +79,14 @@ export default function Admin() {
                     <div><MenuButton onClick={()=>setViewChoice(5)}>Delete Troupe</MenuButton></div>
                 </MenuSide>
                 <ViewSide>
-                    {viewChoice === 0 ? <p>viewChoice is 0</p> : 
-                            viewChoice === 1 ? <p>viewChoice is 1</p> :
-                                viewChoice == 2 ? <p>viewChoice is 2</p> :
+                    {viewChoice === 0 ? <p>Choose an option from the menu</p>: 
+                            viewChoice === 1 ? <JoinCode/> :
+                                viewChoice == 2 ? <RenameTroupe/> :
                                     viewChoice === 3 ? <p>viewChoice is 3</p> :
-                                        viewChoice === 4 ? <p>viewChoice is 4</p> :
-                                            <p>viewChoice is 5</p>
+                                        viewChoice === 4 ? <MakeDirector/> :
+                                            <DeletePlay/>
                     }       
-
-                    <p>Troupe Name: {playMeta.map((p)=>p.troupe_name)}</p>
-                    <button>Edit</button>
                 
-                <div>
-                    <ManageActor />
-                </div>
-                <div>
-                    <button onClick={(event)=>deletePlayEvent(event)}>Delete This Play Event</button>
-                </div>
                 </ViewSide>
             </FlexMain>
         </MainSpace>
