@@ -56,7 +56,6 @@ router.put('/:id', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  console.log(req.params.id);
   const sqlText=`SELECT id, username FROM "user" WHERE troupe_code=$1;`;
   pool.query(sqlText, [req.params.id])
   .then(result => {res.send(result.rows)})

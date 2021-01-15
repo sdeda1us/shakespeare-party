@@ -24,7 +24,7 @@ const LinkText= styled.p `
 
 
 const Nav = (props) => {
-  const directorId= props.store.playMeta.map((p)=>(p.director_id));
+  const directorId= props.store.playMeta.director_id;
 
   let loginLinkData = {
     path: '/login',
@@ -54,17 +54,6 @@ const Nav = (props) => {
         </Link>
       </div>
       
-      {/* Show the link to the info page and the logout button if the user is logged in */}
-      {props.store.user.id && (
-        <>
-        <div>
-            <Link  to="/info">
-              <LinkText>Info Page</LinkText>
-            </Link>
-       </div>
-        
-        </>
-        )}
       <div>
         {/* Always show this link since the about page is not protected */}
         <Link  to="/about">
