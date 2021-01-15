@@ -7,8 +7,8 @@ function* folgerMetaSaga() {
 
 function* fetchCharText() {
     try {
-        const response = yield call(axios.get, 'https://folgerdigitaltexts.org/Ham/charText/'); 
-       console.log(response);
+        const response = yield call(axios.get, '/api/folger');
+        yield put({type: 'SET_CHARACTERS', payload: response.data});
     } catch(error){
         console.log('error retrieving list of plays', error);
     }

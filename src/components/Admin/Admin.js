@@ -50,7 +50,7 @@ export default function Admin() {
     //defines dispatch and usehistory functions
     const dispatch = useDispatch();
     const history = useHistory();
-
+    const [viewChoice, setViewChoice] = useState(0);
     //loads from redux store
     const playMeta = useSelector(state => state.playMeta);
     const userInfo = useSelector(state => state.user);
@@ -76,13 +76,21 @@ export default function Admin() {
             
             <FlexMain>
                 <MenuSide>
-                    <div><MenuButton>View Join Code</MenuButton></div>
-                    <div><MenuButton>Rename Troupe</MenuButton></div>
-                    <div><MenuButton>Role Management</MenuButton></div>
-                    <div><MenuButton>Appoint New Director</MenuButton></div>
-                    <div><MenuButton>Delete Troupe</MenuButton></div>
+                    <div><MenuButton onClick={()=>setViewChoice(1)}>View Join Code</MenuButton></div>
+                    <div><MenuButton onClick={()=>setViewChoice(2)}>Rename Troupe</MenuButton></div>
+                    <div><MenuButton onClick={()=>setViewChoice(3)}>Role Management</MenuButton></div>
+                    <div><MenuButton onClick={()=>setViewChoice(4)}>Appoint New Director</MenuButton></div>
+                    <div><MenuButton onClick={()=>setViewChoice(5)}>Delete Troupe</MenuButton></div>
                 </MenuSide>
                 <ViewSide>
+                    {viewChoice === 0 ? <p>viewChoice is 0</p> : 
+                            viewChoice === 1 ? <p>viewChoice is 1</p> :
+                                viewChoice == 2 ? <p>viewChoice is 2</p> :
+                                    viewChoice === 3 ? <p>viewChoice is 3</p> :
+                                        viewChoice === 4 ? <p>viewChoice is 4</p> :
+                                            <p>viewChoice is 5</p>
+                    }       
+
                     <p>Troupe Name: {playMeta.map((p)=>p.troupe_name)}</p>
                     <button>Edit</button>
                 
