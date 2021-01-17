@@ -11,7 +11,6 @@ function CreatePlay() {
     const [troupeName, setTroupeName] = useState('');
     const [playChoice, setPlayChoice] = useState(0);
     const inputCode = Math.floor(Math.random() * (99999 - 10000) + 10000);
-    const userId = useSelector(state => state.user.id)
     //loads from redux store
     const userID = useSelector(state => state.user.id);
     const playList = useSelector(state=> state.allPlays);
@@ -20,11 +19,11 @@ function CreatePlay() {
 
     const submit = (event) => {
         event.preventDefault();
-        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: userID, joinCode:inputCode};
+        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: userID.id, joinCode:inputCode};
         console.log(formPacket);
         dispatch({type: 'POST_PLAY_EVENT', payload: formPacket});
-        dispatch({type: 'UPDATE_USER', payload: {inputCode, userId}})
-        history.push('/admin');
+        dispatch({type: 'UPDATE_USER', payload: {inputCode, userID}});
+        history.push('/dashboard');
     }
 
     return(
@@ -35,7 +34,7 @@ function CreatePlay() {
                 <label>Select play to perform from the list</label>
                 <select onChange={(event) => setPlayChoice(event.target.value)}>
                     <option>Choose a Play</option>
-                    {playList.map((p) => (<option key={p.id} value={p.id}>{p.play_name}</option>))}
+                    {playList.map((play) => (<option key={play.id} value={play.id}>{play.title}</option>))}
                 </select>
                 <button type="submit">Submit</button>
             </form>

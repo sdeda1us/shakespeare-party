@@ -5,7 +5,8 @@ import userSaga from './user.saga';
 import allPlaysSaga from './allPlays.saga';
 import playEventSaga from './playEvent.saga';
 import playMetaSaga from './playMeta.saga';
-import folgerMetaSaga from './folgerMeta.saga';
+import partSaga from './parts.saga';
+import dashboardSaga from './dashboard.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -22,6 +23,7 @@ export default function* rootSaga() {
     allPlaysSaga(),
     playEventSaga(),
     playMetaSaga(),
-    folgerMetaSaga(),
+    partSaga(),
+    dashboardSaga(),
   ]);
 }

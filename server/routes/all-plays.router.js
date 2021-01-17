@@ -6,7 +6,7 @@ const router = express.Router();
  * GET route template
  */
 router.get('/', (req, res) => {
-  let sqlText = `SELECT * from shakespeare_plays`;
+  let sqlText = `SELECT id, workid, title, longtitle from works`;
   pool.query(sqlText)
   .then(result => {res.send(result.rows)})
   .catch(error => console.log('error retrieving play list', error))

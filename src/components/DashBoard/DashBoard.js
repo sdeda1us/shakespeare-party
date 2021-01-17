@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
+import ViewParts from './ViewParts/ViewParts';
 
 const MainSpace = styled.div `
     width: 95%; 
@@ -53,37 +54,36 @@ export default function DashBoard() {
     const dispatch = useDispatch();
     const history = useHistory();
     const [viewChoice, setViewChoice] = useState(0);
-    let tableZip = [];
     let playCode = '';
     //loads from redux store
     const playMeta = useSelector(state => state.playMeta);
-    const userInfo = useSelector(state => state.user);
+    const user = useSelector(state => state.user);
     const castList = useSelector(state => state.players);
-    const characters = useSelector(state=> state.folger.characters);
-    const words = useSelector(state => state.folger.wordCount);
-    if(characters) {tableZip = characters.map((c, i) => {return {character: c, wordCount: words[i]}});};
+    const partsList = useSelector(state => state.parts);
     
     useEffect(() => {
-        dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}});
-        dispatch({type: 'FETCH_PLAYERS', payload: {joinCode: userInfo.troupe_code}});
-        
+        dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: user.troupe_code}});
+        dispatch({type: 'FETCH_PLAYERS', payload: {joinCode: user.troupe_code}});
         }, []);
     return(
         <MainSpace>
             <TopSpace>
                 <TopInfo>Troupe Name: {playMeta.troupe_name}</TopInfo>
-                <TopInfo>Performing: {playMeta.play_name} </TopInfo>
+                <TopInfo>Performing: {playMeta.title} </TopInfo>
             </TopSpace>
             <FlexMain>
                 <MenuSide>
-                    <MenuButton onClick={()=>{setViewChoice(1); dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.play_code}});}}>View Parts</MenuButton>
+                    <MenuButton 
+                        onClick={()=>
+                            {setViewChoice(1); 
+                            {if(playMeta.workid != undefined) {dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid}})}}
+   
+                            }}>
+                    View Parts
+                    </MenuButton>
                 </MenuSide>
                 <ViewSide>
-                    <div>
-                        <table>
-                            {tableZip ? tableZip.map((t) => <tr><td>{t.character}</td><td>{t.wordCount}</td></tr>) : <tr><td>no role data</td></tr>}
-                        </table>
-                    </div>
+                    <ViewParts/>
                 </ViewSide>
 
             </FlexMain>        

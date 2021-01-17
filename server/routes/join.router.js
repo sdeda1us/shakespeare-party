@@ -6,9 +6,9 @@ const router = express.Router();
  * GET route template
  */
 router.get('/:id', (req, res) => {
-  let sqlText = `SELECT sp.play_code, sp.play_name, pe.play_id, pe.troupe_name, pe.join_code, pe.director_id 
-                FROM shakespeare_plays AS sp
-                JOIN play_event AS pe ON pe.play_id = sp.id
+  let sqlText = `SELECT w.id, w.workid, w.title, w.longtitle, pe.play_id, pe.troupe_name, pe.join_code, pe.director_id 
+                FROM works AS w
+                JOIN play_event AS pe ON pe.play_id = w.id
                 WHERE pe.join_code = $1
                 ;`;
   pool.query(sqlText, [req.params.id])
