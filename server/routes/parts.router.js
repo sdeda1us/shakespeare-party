@@ -14,6 +14,11 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   console.log(req.body);
+  let sqlText=`INSERT INTO user_roles (role_id, actor_id, troupe_code)
+                VALUES ($1, $2, $3);`;
+    pool.query(sqlText, [req.body.part.charid, req.body.user.id, req.body.user.troupe_code])
+    .then(res.sendStatus(200))
+    .catch(error => console.log('error adding actor to part', error))
 });
 
 module.exports = router;
