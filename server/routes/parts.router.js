@@ -21,4 +21,8 @@ router.post('/', (req, res) => {
     .catch(error => console.log('error adding actor to part', error))
 });
 
+router.get('/taken/:id', (req, res) => {
+    console.log('params value:', req.params.id);
+})
+
 module.exports = router;

@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function* playMetaSaga() {
     yield takeLatest('FETCH_PLAY_META', fetchPlayMeta);
+    
 }
 
 function* fetchPlayMeta(action) {
@@ -14,5 +15,7 @@ function* fetchPlayMeta(action) {
         console.log('error retrieving list of plays', error);
     }
 }
+
+
 
 export default playMetaSaga;
