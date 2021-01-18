@@ -59,7 +59,7 @@ export default function DashBoard() {
     const playMeta = useSelector(state => state.playMeta);
     const user = useSelector(state => state.user);
     const castList = useSelector(state => state.players);
-    const partsList = useSelector(state => state.parts);
+    const parts = useSelector(state => state.parts);
     
     useEffect(() => {
         dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: user.troupe_code}});
@@ -76,9 +76,12 @@ export default function DashBoard() {
                     <MenuButton 
                         onClick={()=>
                             {setViewChoice(1); 
-                            {if(playMeta.workid != undefined) {dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid}})}}
-   
-                            }}>
+                            {if(playMeta.workid != undefined) {
+                                dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid}})
+                                dispatch({type: 'FETCH_TAKEN_PARTS', payload:{part: parts, user: user}})
+                            }
+                                
+                        }}}>
                     View Parts
                     </MenuButton>
                 </MenuSide>
