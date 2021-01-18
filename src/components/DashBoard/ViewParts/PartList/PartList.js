@@ -13,8 +13,12 @@ export default function PartList(part) {
         <tr key={keyCode}>
             <td>{part.part.charname}</td>
             <td>{part.part.description}</td>
-            <td>{part.part.speechCount}</td>
-            <td></td>
+            <td>{part.part.speechcount}</td>
+            {takenParts.map((tp) => {
+                    if(tp.role_id === part.part.charid) {
+                        return <td>{tp.actor_name}</td>
+                        } 
+                    })}
             <td>
                 <button onClick={()=> 
                     {dispatch({type:'POST_PART', payload: {part: part.part, user: user}})}
