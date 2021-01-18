@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 import ViewParts from './ViewParts/ViewParts';
+import MyLines from './MyLines/MyLines';
+import ThePlay from './ThePlay/ThePlay';
 
 const MainSpace = styled.div `
     width: 95%; 
@@ -29,6 +31,7 @@ const MenuSide = styled.div `
     display: block;
     margin: auto;
     flex-grow: 1;
+    align-items: flex-start;
 `
 const ViewSide = styled.div `
     flex-grow: 2;
@@ -40,7 +43,7 @@ const ViewSide = styled.div `
 
 const MenuButton = styled.button `
     padding: 5%;
-    width: 80%;
+    width: 50%;
     margin: 5% 5% 0% 5%;
     border: 3px solid #ED60E8;
     background-color: white;
@@ -84,9 +87,16 @@ export default function DashBoard() {
                         }}}>
                     View Parts
                     </MenuButton>
+                    <MenuButton onClick={()=>setViewChoice(2)}>My Lines</MenuButton>
+                    <MenuButton onClick={()=>setViewChoice(3)}>The Play</MenuButton>
                 </MenuSide>
                 <ViewSide>
-                    <ViewParts/>
+                {viewChoice === 0 ? <p>Choose an option from the menu</p>: 
+                            viewChoice === 1 ? <ViewParts/> :
+                                viewChoice == 2 ?  <MyLines/>:
+                                    <ThePlay/>
+                    } 
+                    
                 </ViewSide>
 
             </FlexMain>        

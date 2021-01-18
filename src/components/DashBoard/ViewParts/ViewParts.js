@@ -1,6 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import PartList from './PartList/PartList.js';
+import styled from 'styled-components';
+
+
+const Table = styled.table `
+    width: 95%;
+    margin: auto;
+    padding: 1em;
+    layout: fixed;
+`
+
+const TableHead = styled.th `
+    text-align: left;
+`
 
 export default function PartsList() {
     const dispatch = useDispatch();
@@ -13,21 +26,20 @@ export default function PartsList() {
     return(
         
         <div>
-            <table>
+            <Table>
                 <thead>
                     <tr>
-                        <th>Part</th>
-                        <th>Description</th>
-                        <th>Total Speeches</th>
-                        <th>Actor</th>
-                        <th>Button</th>
+                        <TableHead>Part</TableHead>
+                        <TableHead>Total Speeches</TableHead>
+                        <TableHead>Actor</TableHead>
+                        <TableHead>Button</TableHead>
                     </tr>
                 </thead>
                 <tbody>
                     {parts.map((part) => (
                     <PartList part={part}/>))} 
                 </tbody>
-            </table>
+            </Table>
         </div>
     )   
 }

@@ -2,13 +2,13 @@
 
 # Main objectives - CRUD
 [x] Create an acting troupe
-[ ] Create roles to fill
+[x] Create roles to fill
 [x] Retrieve list of shakespeare's plays
-[ ] Retrieve list of roles
+[x] Retrieve list of roles
 [x] Retrieve list of actors
-[ ] Update director status in the play
+[x] Update director status in the play
 [x] Update actors connection to troupe
-[ ] Update actors' roles in the play as taken/removed
+[x] Update actors' roles in the play as taken/removed
 [x] Delete actors from troupe
 [x] Delete instances of play events
 
@@ -26,4 +26,9 @@
 [ ] - make readme look good
 [ ] - .js to .jsx
 [ ] - export and delete this file when completed 
+
+## - Page Load Sequence Problems
+[ ] - claim parts in dashboard
+[ ] - Initial troupe and play name for dashboard
+[ ] - Remove actor from role in admin
 
