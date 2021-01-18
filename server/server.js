@@ -15,6 +15,7 @@ const playEventRouter = require('./routes/playEvent.router');
 const joinRouter = require('./routes/join.router');
 const partsRouter = require('./routes/parts.router');
 const takenRouter = require('./routes/taken.router');
+const chapterRouter = require('./routes/chapter.router');
 
 
 // Body parser middleware
@@ -35,6 +36,7 @@ app.use('/api/play-event', playEventRouter);
 app.use('/api/join', joinRouter);
 app.use('/api/parts', partsRouter);
 app.use('/api/taken', takenRouter);
+app.use('/api/chapter', chapterRouter);
 
 // Serve static files
 app.use(express.static('build'));

@@ -32,3 +32,10 @@
 [ ] - Initial troupe and play name for dashboard
 [ ] - Remove actor from role in admin
 
+## - Other niggles
+[ ] - sidebar resizes on parts table load
+[ ] - parts are not getting pulled down for characters in multiple plays
+[ ] - 
+
+## - delete troupe 
+[ ] - more stuff needs to be erased from the db on delete troupe
