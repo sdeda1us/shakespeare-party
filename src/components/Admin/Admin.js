@@ -67,7 +67,8 @@ export default function Admin() {
     //populate redux data on page load
     useEffect(() => 
         {dispatch({type: 'FETCH_PLAY_META', payload: {joinCode: userInfo.troupe_code}})
-        dispatch({type: 'FETCH_PLAYERS', payload: {joinCode: userInfo.troupe_code}})}
+        dispatch({type: 'FETCH_PLAYERS', payload: {joinCode: userInfo.troupe_code}})
+        }
         , []);
 
     

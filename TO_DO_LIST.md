@@ -31,6 +31,7 @@
 [ ] - claim parts in dashboard
 [ ] - Initial troupe and play name for dashboard
 [ ] - Remove actor from role in admin
+[ ] - MyLines should have data without needing to go through ClaimParts
 
 ## - Other niggles
 [ ] - sidebar resizes on parts table load
