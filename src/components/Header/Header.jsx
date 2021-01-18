@@ -9,7 +9,7 @@ const Banner = styled.div
     width: 100%;
     color: #ED60E8;
     font-family: 'Dancing Script', cursive;
-    font-size: 80px;
+    font-size: 70px;
     text-align: center;
 `
 

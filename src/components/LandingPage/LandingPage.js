@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
-import './LandingPage.css';
+import {Container, Box, FunHeader, BoxText, YellowButton} from './LandingStyles';
 
 // CUSTOM COMPONENTS
 import RegisterForm from '../RegisterForm/RegisterForm';
@@ -18,26 +18,26 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container main-space">
+      <Container>
         
 
-        <div className="grid">
-          <div className="grid-col grid-col_8">
-             <h2 className="fun-header">Let's Bard-y Like its 1599!</h2>
+        <Box>
+          <FunHeader>Let's Bard-y Like its 1599!</FunHeader>
             <img className="bard-bust" src="images/birmingham-museums-trust-L2sbcLBJwOc-unsplash.jpg" alt="shakespeare bust"/>
-          </div>
-          <div className="grid-col grid-col_4">
+        </Box>
+          <Box>
+          
             <RegisterForm />
 
             <center>
-              <h4>Already a Member?</h4>
-              <button className="yellow-button" onClick={this.onLogin}>
+              <BoxText>Already a Member?</BoxText>
+              <YellowButton onClick={this.onLogin}>
                 Login
-              </button>
+              </YellowButton>
             </center>
-          </div>
-        </div>
-      </div>
+          
+        </Box>
+      </Container>
     );
   }
 }

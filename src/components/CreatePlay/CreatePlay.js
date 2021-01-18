@@ -12,17 +12,17 @@ function CreatePlay() {
     const [playChoice, setPlayChoice] = useState(0);
     const inputCode = Math.floor(Math.random() * (99999 - 10000) + 10000);
     //loads from redux store
-    const userID = useSelector(state => state.user.id);
+    const user = useSelector(state => state.user.id);
     const playList = useSelector(state=> state.allPlays);
     //populates the dropdown list with shakespeare plays on page load
     useEffect(() => {dispatch({type: 'FETCH_ALL_PLAYS'})}, []);
 
     const submit = (event) => {
         event.preventDefault();
-        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: userID.id, joinCode:inputCode};
+        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: user, joinCode:inputCode};
         console.log(formPacket);
         dispatch({type: 'POST_PLAY_EVENT', payload: formPacket});
-        dispatch({type: 'UPDATE_USER', payload: {inputCode, userID}});
+        dispatch({type: 'UPDATE_USER', payload: {inputCode: formPacket.joinCode, user: formPacket.userId}});
         history.push('/dashboard');
     }
 

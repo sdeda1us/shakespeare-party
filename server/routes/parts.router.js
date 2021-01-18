@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/:id', (req, res) => {
   let sqlText = `SELECT c.charname, c.charid, c.description, c.speechcount FROM characters AS c 
-                 WHERE c.works=$1;`; 
+                 WHERE c.works LIKE $1;`; 
   pool.query(sqlText, [req.params.id])
   .then(result => {res.send(result.rows)})
   .catch(error => console.log('error retrieving play list', error))

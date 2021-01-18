@@ -26,7 +26,7 @@ function* fetchUser() {
 
 function* updateUser(action) {
   try {
-    yield call(axios.put, `/api/user/${action.payload.userId}`, action.payload);
+    yield call(axios.put, `/api/user/${action.payload.user}`, action.payload);
   } catch (error) {
     console.log('error updating actor\'s troupe membership', error);
   }
@@ -34,7 +34,7 @@ function* updateUser(action) {
 
 function* fetchPlayers(action) {
   try {
-    const response = yield call(axios.get, `api/user/${action.payload.joinCode}`, action.payload);
+    const response = yield call(axios.get, `api/user/${action.payload.user}`, action.payload);
     yield put({type: 'SET_PLAYERS', payload:response.data});
   } catch(error) {
     console.log('error retrieving cast list', error);
