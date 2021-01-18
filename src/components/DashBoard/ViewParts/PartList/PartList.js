@@ -8,6 +8,9 @@ export default function PartList(part) {
     const keyCode = uuidv4();
     const user = useSelector(state=> state.user);
     const takenParts = useSelector(state => state.takenParts);
+    //const [buttonFlag, setButtonFlag] = useState(true);
+
+    
     return(
         
         <tr key={keyCode}>
@@ -20,12 +23,7 @@ export default function PartList(part) {
                         } 
                     })}
             <td>
-                <button onClick={()=> 
-                    {dispatch({type:'POST_PART', payload: {part: part.part, user: user}})}
-                    
-                    }> 
-                    Claim Part
-                </button>
+                 <button onClick={()=>{dispatch({type:'POST_PART', payload: {part: part.part, user: user}})}}>Claim Part</button>    
             </td>
         </tr>
     )
