@@ -5,7 +5,9 @@ import MakeDirector from './MakeDirector/MakeDirector';
 import JoinCode from './JoinCode/JoinCode';
 import RenameTroupe from './RenameTroupe/RenameTroupe';
 import DeletePlay from './DeletePlay/DeletePlay';
+import RoleManager from './RoleManager/RoleManager';
 import styled from 'styled-components';
+
 
 const MainSpace = styled.div `
     width: 95%; 
@@ -87,7 +89,7 @@ export default function Admin() {
                     {viewChoice === 0 ? <TextDisplay>Choose an option from the menu</TextDisplay>: 
                             viewChoice === 1 ? <JoinCode/> :
                                 viewChoice == 2 ? <RenameTroupe/> :
-                                    viewChoice === 3 ? <p>viewChoice is 3</p> :
+                                    viewChoice === 3 ? <RoleManager/> :
                                         viewChoice === 4 ? <MakeDirector/> :
                                             <DeletePlay/>
                     }       

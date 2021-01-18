@@ -5,6 +5,7 @@ function* partSaga() {
     yield takeLatest('FETCH_CHARTEXT', fetchCharText);
     yield takeLatest('POST_PART', postPart);
     yield takeLatest('FETCH_TAKEN_PARTS', fetchTakenParts);
+    yield takeLatest('DELETE_TAKEN_PARTS', deleteTakenParts);
 }
 
 function* fetchCharText(action) {
@@ -32,6 +33,10 @@ function* fetchTakenParts(action){
     }catch(error){
         console.log('error getting filled roles', error);
     }
+}
+
+function* deleteTakenParts(action){
+    yield call(axios.delete, `/api/taken/${action.payload}`);
 }
 
 export default partSaga;

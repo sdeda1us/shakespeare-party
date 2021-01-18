@@ -4,10 +4,16 @@ const router = express.Router();
 
 router.get(`/:id`, (req, res) => {
     const sqlText=`SELECT * FROM user_roles WHERE troupe_code=($1);`;
-    console.log("params =", req.params.id);
     pool.query(sqlText, [req.params.id])
-    .then(result => {console.log('rows from search', result.rows); res.send(result.rows)})
+    .then(result => {res.send(result.rows)})
     .catch(error => console.log('error retrieving taken parts from server', error))
+})
+
+router.delete(`/:id`, (req, res) => {
+    const sqlText=`DELETE from user_roles WHERE role_id=$1;`;
+    pool.query(sqlText, [req.params.id])
+    .then(result => {res.sendStatus(200)})
+    .catch(error => console.log('error updating taken parts on server', error))
 })
 
 module.exports = router;
