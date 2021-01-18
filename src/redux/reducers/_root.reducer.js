@@ -7,6 +7,7 @@ import allPlayEvents from './allPlayEvents.reducer';
 import playMeta from './playMeta.reducer';
 import players from './players.reducer';
 import parts from './parts.reducer';
+import takenParts from './takenParts.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
   playMeta,
   players,
   parts,
+  takenParts,
 });
 
 export default rootReducer;

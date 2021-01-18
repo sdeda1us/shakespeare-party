@@ -20,12 +20,12 @@ export default function PartsList() {
                         <th>Description</th>
                         <th>Total Speeches</th>
                         <th>Actor</th>
-                        <th></th>
+                        <th>Button</th>
                     </tr>
                 </thead>
                 <tbody>
                     {parts.map((part) => (
-                    <PartList part={part} />))} 
+                    <PartList part={part}/>))} 
                 </tbody>
             </table>
         </div>
