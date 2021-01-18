@@ -1,6 +1,6 @@
 
 const act = (state = [], action) => {
-    if(action.type==='SET_CHAPTERS'){
+    if(action.type==='SET_ACT'){
         return action.payload;
     }
     return state;

@@ -15,9 +15,10 @@ function* fetchChapters(action) {
     }
 }
 
-function fetchActs() {
+function* fetchActs(action) {
     try{
-        const response = yield call(axios.get, `/api/act/${action.payload.workid}`);
+        const response = yield call(axios.get, `/api/act/${action.payload.workid}`); 
+        yield put({type: 'SET_ACT', payload: response.data});
     }catch(error){
         console.log('error retrieving list of acts', error);
     }
