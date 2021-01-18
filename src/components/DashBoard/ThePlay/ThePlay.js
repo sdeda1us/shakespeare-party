@@ -8,6 +8,8 @@ export default function ThePlay() {
     const playMeta = useSelector(state => state.playMeta);
     useEffect(() => {
         dispatch({type: 'FETCH_CHAPTERS', payload: {workid: playMeta.workid}});
+        dispatch({type: 'FETCH_ACTS', payload: {workid: playMeta.workid}});
+
         }, []);
 
 
