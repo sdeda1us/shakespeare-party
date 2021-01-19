@@ -26,7 +26,7 @@ function* fetchUser() {
 
 function* updateUser(action) {
   try {
-    yield call(axios.put, `/api/user/${action.payload.user}`, action.payload);
+    yield call(axios.put, `/api/user/${action.payload.userId}`, action.payload);
   } catch (error) {
     console.log('error updating actor\'s troupe membership', error);
   }

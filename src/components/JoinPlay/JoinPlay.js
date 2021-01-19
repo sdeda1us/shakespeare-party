@@ -16,15 +16,15 @@ function JoinPlay() {
 
     const submit = (event) => {
         event.preventDefault();
+        let toggle = 0;
         allTroupes.map((troupe) => {
-            console.log(allTroupes);
-            console.log(troupe.join_code, inputCode);
             if (troupe.join_code==inputCode){
                 dispatch({type: 'UPDATE_USER', payload: {inputCode, userId}})
+                toggle = 1;
                 history.push('/dashboard');
-            }
+            } 
         })
-        alert('Error! Code does not match, please try again');
+        if(toggle===0) {alert('Error! Code does not match any acting troupes, please try again');}
     }
 
     return(

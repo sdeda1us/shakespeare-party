@@ -61,7 +61,7 @@ const Nav = (props) => {
         </Link>
       </div>
      
-      {props.store.user.id==directorId ? 
+      {props.store.user.id==directorId && props.store.user.id >0 ? 
         <div>
           <Link  to="/admin">
             <LinkText>Director Admin</LinkText>
