@@ -57,18 +57,19 @@ export const BoxText = styled.p`
 `;
 
 export const FunHeader = styled.h2 `
-    color: rgb(238, 238, 11);
+    color: black;
     text-align: center;
     font-family: 'Calligraffitti', cursive;
-    font-size: 40px;
+    font-size: 30px;
   `
 
-  export const YellowButton = styled.button `
-    color: rgb(238, 238, 11);
-    border: 2px solid yellow;
+  export const StandardButton = styled.button `
+    color: #FBFBFB;
+    border: 2px solid white;
     background-color: black;
     font-family: 'Calligraffitti', cursive;
     font-size: 20px;
-    width: 15%;
+    width: 5rem;
     padding: 5px;
+    border-radius: 5px;
   `

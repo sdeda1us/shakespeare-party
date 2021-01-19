@@ -6,8 +6,8 @@ const MenuButton = styled.button `
     padding: 5%;
     width: 80%;
     margin: 5% 5% 0% 5%;
-    border: 3px solid black;
-    background-color: red;
+    border: 3px solid white;
+    background-color: #b30000;
     color: white;
     font-size: 30px;
     border-radius: 10px;

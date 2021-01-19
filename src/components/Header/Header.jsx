@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const Banner = styled.div 
 `
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
-    background-color: black;
+    background-color: #020300;
     height 100px;
     width: 100%;
-    color: #ED60E8;
+    color: #FBFBFB;
     font-family: 'Dancing Script', cursive;
     font-size: 70px;
     text-align: center;

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const FancyLink = styled.span `
   font: 40px;
-  color: yellow;
+  color: #020300;
 `
 
 class LoginPage extends Component {

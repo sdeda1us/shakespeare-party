@@ -6,7 +6,7 @@ import styled from 'styled-components';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 let TextRegular = styled.p `
-  color: white;
+  color: black;
   text-align: center;
   font-size: 25px;
 `

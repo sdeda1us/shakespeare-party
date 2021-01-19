@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const FancyLink = styled.span `
   font: 40px;
-  color: #ED60E8;
+  color: #020300;
 `
 
 class RegisterPage extends Component {

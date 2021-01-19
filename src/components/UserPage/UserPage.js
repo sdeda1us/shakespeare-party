@@ -18,7 +18,7 @@ const ChoiceFont = styled.h2 `
   text-align: center;
   font-family: 'Meddon', cursive;
   font-size: 35px;
-  color: #ED60E8;
+  color: #FBFBFB;
 
   &:hover {
     color: yellow;
@@ -38,9 +38,10 @@ const ChoiceRow = styled.div`
   padding-top: 30px;
 `
 const ChoiceBox = styled.div `
-  border: 2px solid #ED60E8;
+  border: 2px solid #FBFBFB;
   padding: 1%;
   background-color: black;
+  border-radius: 10px;
 `
 const OrBox = styled.div `
   margin-left: 10%;

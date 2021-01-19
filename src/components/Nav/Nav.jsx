@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const NavBanner = styled.div `
   width: 100%;
-  background-color: yellow;
+  background-color: #7D8CA3;
   overflow: hidden;
   margin-bottom: 30px;
   display: inline-flex;
