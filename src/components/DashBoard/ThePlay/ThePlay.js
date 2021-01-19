@@ -12,6 +12,7 @@ export default function ThePlay() {
     const acts = useSelector(state => state.act);
     const actView = useSelector(state => state.actView);
     const sceneView = useSelector(state => state.actView);
+    const playText = useSelector(state => state.playText);
 
 
     useEffect(() => {
@@ -31,7 +32,9 @@ export default function ThePlay() {
                 ))}
             </div>
             <div>
-                {actView && sceneView && <p>Text will go here!</p>}
+                {playText.map((pt)=> (actView===pt.section && pt.chapter === sceneView &&
+                        <p>{pt.charid}{pt.plaintext}</p>
+                ))}
             </div>
         </div>
     )

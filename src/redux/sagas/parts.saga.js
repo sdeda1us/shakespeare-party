@@ -20,7 +20,7 @@ function* fetchCharText(action) {
 function* postPart(action) {
     try {
         yield call(axios.post, `/api/parts/`, action.payload);
-        const response=yield put({type:'FETCH_TAKEN_PARTS', payload:action.payload});
+        yield put({type:'FETCH_TAKEN_PARTS', payload:action.payload});
     } catch(error){
         console.log(`error posting part assignemnt`, error);
     }

@@ -14,20 +14,30 @@ export default function PartList(part) {
     const takenParts = useSelector(state => state.takenParts);
     //const [buttonFlag, setButtonFlag] = useState(true);
 
-    
+    const claimPart = () => {
+        dispatch({type:'POST_PART', payload: {part: part.part, user: user}});
+    }
+
+    const checkMatch = () => {
+        for (let i of takenParts){
+            if(i.role_id === part.part.charid) {
+                if(i.actor_id === user.id){
+                    return <><td>{i.actor_name}</td><td><button>Release Part</button></td></>
+                }else{
+                    return <td>{i.actor_name}</td>
+                }
+            } 
+        }
+        return <td><button onClick={()=>(claimPart())}>Claim Part</button> </td>
+    }
+
     return(
         
         <tr key={keyCode}>
             <td>{part.part.charname}</td>
             <td>{part.part.speechcount}</td>
-            {takenParts.map((tp) => {
-                    if(tp.role_id === part.part.charid) {
-                        return <td>{tp.actor_name}</td>
-                        } 
-                    })}
-            <td>
-                 <button onClick={()=>{dispatch({type:'POST_PART', payload: {part: part.part, user: user}})}}>Claim Part</button>    
-            </td>
+            {checkMatch()}
+            
         </tr>
     )
 }
