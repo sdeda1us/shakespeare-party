@@ -4,8 +4,8 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import styled from 'styled-components';
 
 const FormBox = styled.form `
-  background-color: yellow;
-  color: black;
+  background-color: #36311F;
+  color: #FBFBFB;
   border-radius: 5px;
 `
 const RegButton = styled.input `

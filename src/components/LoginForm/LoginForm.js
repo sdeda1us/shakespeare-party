@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const PinkForm = styled.form `
   color: white;
-  background-color: #ED60E8;
+  background-color: #59544B;
   border-radius: 5px;
 `
 const YellowButton = styled.input `
