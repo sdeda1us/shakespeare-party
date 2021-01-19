@@ -30,6 +30,7 @@ function* fetchTakenParts(action){
     try{
         const response = yield call(axios.get, `/api/taken/${action.payload.user.troupe_code}`);
         yield put({type:'SET_TAKEN_PARTS', payload: response.data});
+        
     }catch(error){
         console.log('error getting filled roles', error);
     }
