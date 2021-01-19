@@ -16,24 +16,22 @@ const MainSpace = styled.div `
     background-color: white;
 `
 
-const FlexMain = styled.div `
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-`
+
 
 const Header = styled.div `
     text-align: center;
 `
 
-const MenuSide = styled.div `
-    display: block;
+const MenuBar = styled.div `
+    display: inline-flex;
+    width: 100%;
     margin: auto;
-    flex-grow: 1;
+    justify-content: space-between;
+    margin-bottom: 3rem;
 `
-const ViewSide = styled.div `
-    flex-grow: 2;
-    border: 3px solid #ED60E8;
+const View = styled.div `
+    width: 90%;
+    border: 3px solid black;
     border-radius: 10px;
     margin: 0% 2% 0% 2%;
     padding: 2%;
@@ -41,12 +39,12 @@ const ViewSide = styled.div `
 
 const MenuButton = styled.button `
     padding: 5%;
-    width: 80%;
-    margin: 5% 5% 0% 5%;
-    border: 3px solid #ED60E8;
-    background-color: white;
-    color: #ED60E8;
-    font-size: 30px;
+    width: 11rem;
+    height: 5rem;
+    border: 3px solid black;
+    background-color: #59544B;
+    color: white;
+    font-size: 20px;
     border-radius: 10px;
 `
 const TextDisplay = styled.p `
@@ -75,18 +73,16 @@ export default function Admin() {
     return (
         <MainSpace>
             <Header>
-                <h2>Director Administration Page</h2>
+                <h2>Director Administration</h2>
             </Header>
-            
-            <FlexMain>
-                <MenuSide>
+                <MenuBar>
                     <div><MenuButton onClick={()=>setViewChoice(1)}>View Join Code</MenuButton></div>
                     <div><MenuButton onClick={()=>setViewChoice(2)}>Rename Troupe</MenuButton></div>
                     <div><MenuButton onClick={()=>setViewChoice(3)}>Role Management</MenuButton></div>
                     <div><MenuButton onClick={()=>setViewChoice(4)}>Appoint New Director</MenuButton></div>
                     <div><MenuButton onClick={()=>setViewChoice(5)}>Delete Troupe</MenuButton></div>
-                </MenuSide>
-                <ViewSide>
+                </MenuBar>
+                <View>
                     {viewChoice === 0 ? <TextDisplay>Choose an option from the menu</TextDisplay>: 
                             viewChoice === 1 ? <JoinCode/> :
                                 viewChoice == 2 ? <RenameTroupe/> :
@@ -95,8 +91,7 @@ export default function Admin() {
                                             <DeletePlay/>
                     }       
                 
-                </ViewSide>
-            </FlexMain>
+                </View>
         </MainSpace>
     )
 }

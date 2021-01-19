@@ -1,7 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import styled from 'styled-components';
 
+const SubmitButton = styled.button `
+    width: 4rem;
+    height: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin-left: 10px;
+`
 
 function CreatePlay() {
     //defines dispatch function
@@ -31,12 +40,12 @@ function CreatePlay() {
             <form onSubmit={(event) => submit(event)}>
                 <label>Create name for your troop of mirthful players!</label>
                 <input type="text" onChange={(event) => setTroupeName(event.target.value)}/>
-                <label>Select play to perform from the list</label>
+                <label>Select a play to perform!</label>
                 <select onChange={(event) => setPlayChoice(event.target.value)}>
                     <option>Choose a Play</option>
                     {playList.map((play) => (<option key={play.id} value={play.id}>{play.title}</option>))}
                 </select>
-                <button type="submit">Submit</button>
+                <SubmitButton type="submit">Submit</SubmitButton>
             </form>
         </div>
     )
