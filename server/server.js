@@ -17,6 +17,7 @@ const partsRouter = require('./routes/parts.router');
 const takenRouter = require('./routes/taken.router');
 const chapterRouter = require('./routes/chapter.router');
 const actRouter = require('./routes/act.router');
+const textRouter = require('./routes/text.router');
 
 
 // Body parser middleware
@@ -39,6 +40,9 @@ app.use('/api/parts', partsRouter);
 app.use('/api/taken', takenRouter);
 app.use('/api/chapter', chapterRouter);
 app.use('/api/act', actRouter);
+app.use('/api/text', textRouter);
+
+
 
 // Serve static files
 app.use(express.static('build'));

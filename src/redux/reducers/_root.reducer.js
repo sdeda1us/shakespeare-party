@@ -11,6 +11,9 @@ import takenParts from './takenParts.reducer';
 import chapter from './chapter.reducer';
 import act from './act.reducer';
 import actView from './actView.reducer';
+import sceneView from './sceneView.reducer';
+import playText from './playText.reducer';
+
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -31,6 +34,8 @@ const rootReducer = combineReducers({
   chapter,
   act,
   actView,
+  sceneView,
+  playText,
 });
 
 export default rootReducer;
