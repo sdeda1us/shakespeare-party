@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
@@ -22,6 +22,10 @@ export default function RenameTroupe() {
     const playMeta = useSelector(state => state.playMeta);
     const [isEditable, setEditable] = useState(false);
     const [newName, setNewName] = useState('');
+
+    useEffect(() => {}
+        
+        , [playMeta]);
 
     return (
         <div>

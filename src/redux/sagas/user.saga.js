@@ -34,7 +34,7 @@ function* updateUser(action) {
 
 function* fetchPlayers(action) {
   try {
-    const response = yield call(axios.get, `api/user/${action.payload.user}`, action.payload);
+    const response = yield call(axios.get, `api/user/${action.payload.joinCode}`);
     yield put({type: 'SET_PLAYERS', payload:response.data});
   } catch(error) {
     console.log('error retrieving cast list', error);

@@ -15,6 +15,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   let sqlText=`INSERT INTO user_roles (role_id, actor_id, actor_name, troupe_code)
                 VALUES ($1, $2, $3, $4);`;
+    console.log('POST ROUTE', req.body.part.charid);
     pool.query(sqlText, [req.body.part.charid, req.body.user.id, req.body.user.username, req.body.user.troupe_code])
     .then(res.sendStatus(200))
     .catch(error => console.log('error adding actor to part', error))

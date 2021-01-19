@@ -10,8 +10,11 @@ function* partSaga() {
 
 function* fetchCharText(action) {
     try {
-        const response = yield call(axios.get, `/api/parts/${action.payload.playCode}`);
+        console.log('calling FETCH CHARTEXT SAGA')
+        const response = yield axios.get (`/api/parts/${action.payload.playCode}`);
+        
         yield put({type: 'SET_CHARACTERS', payload: response.data});
+        yield put({type: 'FETCH_TAKEN_PARTS', payload: action.payload.troupeCode});
     } catch(error){
         console.log('error retrieving list of plays', error);
     }
@@ -19,8 +22,9 @@ function* fetchCharText(action) {
 
 function* postPart(action) {
     try {
-        yield call(axios.post, `/api/parts/`, action.payload);
-        yield put({type:'FETCH_TAKEN_PARTS', payload:action.payload});
+        yield axios.post(`/api/parts/`, action.payload);
+        console.log('ACTION.PAYLOAD', action.payload)
+        yield put({type:'FETCH_TAKEN_PARTS', payload:action.payload.user.troupe_code});
     } catch(error){
         console.log(`error posting part assignemnt`, error);
     }
@@ -28,16 +32,19 @@ function* postPart(action) {
 
 function* fetchTakenParts(action){
     try{
-        const response = yield call(axios.get, `/api/taken/${action.payload.user.troupe_code}`);
+        const response = yield axios.get (`/api/taken/${action.payload}`);
         yield put({type:'SET_TAKEN_PARTS', payload: response.data});
-        
+
+
     }catch(error){
         console.log('error getting filled roles', error);
     }
 }
 
 function* deleteTakenParts(action){
-    yield call(axios.delete, `/api/taken/${action.payload}`);
+    console.log(action.payload);
+    yield call(axios.delete, `/api/taken/${action.payload.role}`);
+    yield put({type: 'FETCH_TAKEN_PARTS', payload: action.payload.joinCode});
 }
 
 export default partSaga;

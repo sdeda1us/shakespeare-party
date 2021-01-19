@@ -38,7 +38,8 @@ function* deleteTroupe(action) {
 
 function* editTroupeName(action) {
     try{
-        yield call(axios.put, `/api/play-event/${action.payload.joinCode}`, action.payload);
+        yield axios.put(`/api/play-event/${action.payload.joinCode}`, action.payload);
+        yield put({type: 'FETCH_PLAY_META', payload: action.payload});
     }catch (error) {
         console.log('error changing troupe name', error)
     }

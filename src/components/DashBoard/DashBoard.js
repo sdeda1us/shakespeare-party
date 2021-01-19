@@ -71,8 +71,8 @@ export default function DashBoard() {
     return(
         <MainSpace>
             <TopSpace>
-                <TopInfo>Troupe Name: {playMeta.troupe_name}</TopInfo>
-                <TopInfo>Performing: {playMeta.title} </TopInfo>
+                {playMeta && <TopInfo>Troupe Name: {playMeta.troupe_name}</TopInfo>}
+                {playMeta && <TopInfo>Performing: {playMeta.title} </TopInfo>}
             </TopSpace>
             <FlexMain>
                 <MenuSide>
@@ -80,8 +80,7 @@ export default function DashBoard() {
                         onClick={()=>
                             {setViewChoice(1); 
                             {if(playMeta.workid != undefined) {
-                                dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid}})
-                                dispatch({type: 'FETCH_TAKEN_PARTS', payload:{part: parts, user: user}})
+                                dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid, troupeCode: user.troupe_code}})
                             }
                                 
                         }}}>

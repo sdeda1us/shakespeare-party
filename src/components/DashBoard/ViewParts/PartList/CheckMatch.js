@@ -4,15 +4,20 @@ import React, {useEffect, useState} from 'react';
 
  export default function CheckMatch(part) {
      const takenParts = useSelector(state=>state.takenParts);
+     const playMeta = useSelector(state=>state.playMeta);
      const user = useSelector(state=> state.user);
+     const parts = useSelector(state=> state.parts);
      const dispatch  = useDispatch();
+
+     useEffect(() => {
+        }, [parts]);
 
      const claimPart = () => {
         dispatch({type:'POST_PART', payload: {part: part.part, user: user}});
     }
 
     const releasePart = (role_id) => {
-        dispatch({type: 'DELETE_TAKEN_PARTS', payload: role_id});
+        dispatch({type: 'DELETE_TAKEN_PARTS', payload: {role: role_id, joinCode: playMeta.join_code}});
     }
 
     for (let i of takenParts){

@@ -28,7 +28,7 @@
 [ ] - export and delete this file when completed 
 
 ## - Page Load Sequence Problems
-[ ] - claim parts in dashboard
+[x] - claim parts in dashboard
 [ ] - Initial troupe and play name for dashboard
 [ ] - Remove actor from role in admin
 [ ] - MyLines should have data without needing to go through ClaimParts
