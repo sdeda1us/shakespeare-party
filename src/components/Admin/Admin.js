@@ -41,11 +41,12 @@ const MenuButton = styled.button `
     padding: 5%;
     width: 11rem;
     height: 5rem;
-    border: 3px solid black;
-    background-color: #59544B;
+    border: 3px solid white;
+    background-color: black;
     color: white;
     font-size: 20px;
     border-radius: 10px;
+    font-family: 'Calligraffitti', cursive;
 `
 const TextDisplay = styled.p `
     font-size: 30px;

@@ -19,7 +19,6 @@ export default function ThePlay() {
     const acts = useSelector(state => state.act);
     const actView = useSelector(state => state.actView);
     const readingText = useSelector(state => state.readingText);
-    const regex = /\\n|\\r\\n|\\n\\r|\\r/g;
 
 
     useEffect(() => {

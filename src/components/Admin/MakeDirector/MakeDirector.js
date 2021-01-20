@@ -4,15 +4,15 @@ import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 
 const MenuButton = styled.button `
-    padding: 5%;
-    width: 24rem;
+    width: 12rem;
     margin-left: 10%;
     margin-top: 10px;
-    border: 3px solid #FBFBFB;
-    background-color: #7D8CA3;
+    border: 3px solid white;
+    background-color: black;
     color: white;
     font-size: 30px;
     border-radius: 120px;
+    font-family: 'Calligraffitti', cursive;
 `
 
 const TextDisplay = styled.p `

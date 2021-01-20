@@ -3,9 +3,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
 const MenuButton = styled.button `
-    padding: 5%;
-    width: 80%;
-    margin: 5% 5% 0% 5%;
+    margin-left: 40%;
+    width: 14rem;
     border: 3px solid white;
     background-color: #b30000;
     color: white;
@@ -36,7 +35,7 @@ export default function DeletePlay() {
     return (
         <div>
             <TextDisplay>WARNING! This will delete your play and reset memberships for all actors and the director.</TextDisplay>
-            <MenuButton onClick={(event)=>deletePlayEvent(event)}>Delete This Play Event</MenuButton>
+            <MenuButton onClick={(event)=>deletePlayEvent(event)}>Delete </MenuButton>
         </div>
     )
 
