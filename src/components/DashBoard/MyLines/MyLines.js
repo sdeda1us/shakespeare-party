@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import PartButtons from './PartButtons/PartButtons';
 
 
 export default function MyLines() {
     const user = useSelector(state => state.user);
     const takenParts = useSelector(state => state.takenParts);
+    const charLines = useSelector(state => state.charLines)
     const myParts = [];
     const fillMyParts = () => {
         takenParts.map(tp => {
@@ -14,11 +16,16 @@ export default function MyLines() {
         })
     }
     
+
     return(
         <div>
-            {fillMyParts()}
-            {myParts.map(mp=>(<button>{mp}</button>))}
+            <div>
+                {fillMyParts()}
+                {myParts.map(mp=>(<PartButtons mp={mp} />))}
+            </div>
+            <div>
+                {charLines.map((cl)=>(<p>{cl.Act}{cl.Scene}{cl.Role}{cl.Line}</p>))}
+            </div>
         </div>
-        
     )
 }

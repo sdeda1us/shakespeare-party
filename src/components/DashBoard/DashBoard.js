@@ -20,21 +20,12 @@ const TopInfo = styled.div `
     font-size: 25px;
 `
 
-const FlexMain = styled.div `
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-`
-
-
 const MenuSide = styled.div `
-    display: block;
+    display: inline-flex;
     margin: auto;
-    flex-grow: 1;
-    align-items: flex-start;
+    justify-content: space-between; 
 `
 const ViewSide = styled.div `
-    flex-grow: 2;
     border: 3px solid #ED60E8;
     border-radius: 10px;
     margin: 0% 2% 0% 2%;
@@ -43,12 +34,12 @@ const ViewSide = styled.div `
 
 const MenuButton = styled.button `
     padding: 5%;
-    width: 50%;
-    margin: 5% 5% 0% 5%;
-    border: 3px solid #ED60E8;
-    background-color: white;
-    color: #ED60E8;
-    font-size: 30px;
+    width: 11rem;
+    height: 5rem;
+    border: 3px solid black;
+    background-color: black;
+    color: white;
+    font-size: 20px;
     border-radius: 10px;
 `
 
@@ -74,7 +65,7 @@ export default function DashBoard() {
                 {playMeta && <TopInfo>Troupe Name: {playMeta.troupe_name}</TopInfo>}
                 {playMeta && <TopInfo>Performing: {playMeta.title} </TopInfo>}
             </TopSpace>
-            <FlexMain>
+           
                 <MenuSide>
                     <MenuButton 
                         onClick={()=>
@@ -95,11 +86,7 @@ export default function DashBoard() {
                                 viewChoice == 2 ?  <MyLines/>:
                                     <ThePlay/>
                     } 
-                    
-                </ViewSide>
-
-            </FlexMain>        
-            
+                </ViewSide>       
         </MainSpace>
     )
 }

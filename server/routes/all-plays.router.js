@@ -2,9 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-/**
- * GET route template
- */
+
 router.get('/', (req, res) => {
   let sqlText = `SELECT id, workid, title, longtitle from works`;
   pool.query(sqlText)
@@ -12,9 +10,7 @@ router.get('/', (req, res) => {
   .catch(error => console.log('error retrieving play list', error))
 });
 
-/**
- * POST route template
- */
+
 router.post('/', (req, res) => {
   // POST route code here
 });
