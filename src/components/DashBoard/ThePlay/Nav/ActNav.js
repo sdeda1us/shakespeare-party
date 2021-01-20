@@ -11,7 +11,6 @@ const ActButton = styled.button `
 
 export default function ActNav(act){
     const dispatch = useDispatch();
-    const [viewChoice, setViewChoice] = useState(0);
     const chapters = useSelector(state => state.chapter);
     const setActtoRender = (actNumber) => {
         dispatch({type: 'SET_ACT_VIEW', payload: actNumber});

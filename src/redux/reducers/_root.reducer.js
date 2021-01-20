@@ -14,6 +14,7 @@ import actView from './actView.reducer';
 import sceneView from './sceneView.reducer';
 import playText from './playText.reducer';
 import charLines from './charLines.reducer';
+import readingText from './readingText.reducer';
 
 
 // rootReducer is the primary reducer for our entire project
@@ -38,6 +39,7 @@ const rootReducer = combineReducers({
   sceneView,
   playText,
   charLines,
+  readingText,
 });
 
 export default rootReducer;
