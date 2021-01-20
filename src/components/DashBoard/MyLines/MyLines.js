@@ -16,7 +16,6 @@ export default function MyLines() {
         })
     }
     
-
     return(
         <div>
             <div>
@@ -24,7 +23,20 @@ export default function MyLines() {
                 {myParts.map(mp=>(<PartButtons mp={mp} />))}
             </div>
             <div>
-                {charLines.map((cl)=>(<p>{cl.Act}{cl.Scene}{cl.Role}{cl.Line}</p>))}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Act</th>
+                            <th>Scene</th>
+                            <th>Role</th>
+                            <th>Line</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {charLines.map((cl)=>(<tr><td>{cl.Act}</td><td>{cl.Scene}</td><td>{cl.Role}</td><td>{cl.Line}</td></tr>))}
+                    </tbody>
+                </table>
+                
             </div>
         </div>
     )
