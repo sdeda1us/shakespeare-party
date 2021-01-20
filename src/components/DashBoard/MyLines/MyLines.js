@@ -33,7 +33,7 @@ export default function MyLines() {
                         </tr>
                     </thead>
                     <tbody>
-                    {charLines.map((cl)=>(<tr><td>{cl.Act}</td><td>{cl.Scene}</td><td>{cl.Role}</td><td>{cl.Line}</td></tr>))}
+                    {charLines.map((cl)=>(<tr><td>{cl.Act}</td><td>{cl.Scene}</td><td>{cl.Role}</td><td><p>{cl.Line}</p></td></tr>))}
                     </tbody>
                 </table>
                 

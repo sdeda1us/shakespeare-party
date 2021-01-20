@@ -10,7 +10,7 @@ const MenuButton = styled.button `
     background-color: #b30000;
     color: white;
     font-size: 30px;
-    border-radius: 10px;
+    border-radius: 30px;
 `
 const TextDisplay = styled.p `
     font-size: 30px;
