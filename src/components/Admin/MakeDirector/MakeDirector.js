@@ -5,14 +5,16 @@ import styled from 'styled-components';
 
 const MenuButton = styled.button `
     padding: 5%;
-    width: 60%;
-    margin: 5% 5% 0% 5%;
-    border: 3px solid #ED60E8;
-    background-color: #ED60E8;
+    width: 24rem;
+    margin-left: 10%;
+    margin-top: 10px;
+    border: 3px solid #FBFBFB;
+    background-color: #7D8CA3;
     color: white;
     font-size: 30px;
-    border-radius: 10px;
+    border-radius: 120px;
 `
+
 const TextDisplay = styled.p `
     font-size: 30px;
     text-align: center;
