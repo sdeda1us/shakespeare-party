@@ -26,9 +26,9 @@ const MenuSide = styled.div `
     justify-content: space-between; 
 `
 const ViewSide = styled.div `
-    border: 3px solid #ED60E8;
+    border: 3px solid black;
     border-radius: 10px;
-    margin: 0% 2% 0% 2%;
+    margin: 5% 2% 0% 2%;
     padding: 2%;
 `
 
@@ -65,15 +65,13 @@ export default function DashBoard() {
                 {playMeta && <TopInfo>Troupe Name: {playMeta.troupe_name}</TopInfo>}
                 {playMeta && <TopInfo>Performing: {playMeta.title} </TopInfo>}
             </TopSpace>
-           
                 <MenuSide>
                     <MenuButton 
                         onClick={()=>
                             {setViewChoice(1); 
                             {if(playMeta.workid != undefined) {
                                 dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid, troupeCode: user.troupe_code}})
-                            }
-                                
+                            }     
                         }}}>
                     View Parts
                     </MenuButton>

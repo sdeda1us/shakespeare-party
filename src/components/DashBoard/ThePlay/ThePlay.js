@@ -2,7 +2,14 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ActNav from './Nav/ActNav';
 import SceneNav from './Nav/SceneNav';
+import styled from 'styled-components';
 
+const TableCell = styled.td `
+    border-bottom: 1px solid black;
+`
+const TableHeader = styled.th `
+    border-bottom: 1px solid black;
+`
 
 
 export default function ThePlay() {
@@ -12,6 +19,7 @@ export default function ThePlay() {
     const acts = useSelector(state => state.act);
     const actView = useSelector(state => state.actView);
     const readingText = useSelector(state => state.readingText);
+    const regex = /\\n|\\r\\n|\\n\\r|\\r/g;
 
 
     useEffect(() => {
@@ -32,16 +40,16 @@ export default function ThePlay() {
             </div>
             <div>
                 <table>
-                    <tablehead>
+                    <thead>
                         <tr>
-                            <th>Act</th>
-                            <th>Scene</th>
-                            <th>Role</th>
-                            <th>Line</th>
+                            <TableHeader>Act</TableHeader>
+                            <TableHeader>Scene</TableHeader>
+                            <TableHeader>Role</TableHeader>
+                            <TableHeader>Line</TableHeader>
                         </tr>
-                    </tablehead>
+                    </thead>
                     <tbody>
-                        {readingText.map(rt=> (<tr><td>{rt.Act}</td><td>{rt.Scene}</td><td>{rt.Role}</td><td>{rt.Line}</td></tr>))}
+                        {readingText.map(rt=> (<tr><TableCell>{rt.Act}</TableCell><TableCell>{rt.Scene}</TableCell><TableCell>{rt.Role}</TableCell><TableCell>{rt.Line}</TableCell></tr>))}
                     </tbody>
                 </table>
             </div>
