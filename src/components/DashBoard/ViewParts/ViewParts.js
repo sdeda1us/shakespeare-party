@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import PartList from './PartList/PartList.js';
 import styled from 'styled-components';
 
@@ -16,13 +16,8 @@ const TableHead = styled.th `
 `
 
 export default function PartsList() {
-    const dispatch = useDispatch();
     const parts = useSelector(state=> state.parts);
-    const user = useSelector(state=> state.user);
-    const playMeta = useSelector(state => state.playMeta);
-    useEffect(() => {
-        //dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid}});
-        }, []);
+   
     return(
         
         <div>

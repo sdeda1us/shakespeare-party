@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from 'react-redux';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 
 const SceneButton = styled.button `

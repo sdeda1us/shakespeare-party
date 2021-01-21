@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
@@ -15,10 +15,6 @@ const MenuButton = styled.button `
     font-family: 'Calligraffitti', cursive;
 `
 
-const TextDisplay = styled.p `
-    font-size: 30px;
-    text-align: center;
-`
 
 const SelectGrand = styled.select `
     width: 60%;

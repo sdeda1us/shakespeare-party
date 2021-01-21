@@ -7,6 +7,7 @@ import playEventSaga from './playEvent.saga';
 import playMetaSaga from './playMeta.saga';
 import partSaga from './parts.saga';
 import textSaga from './text.saga';
+import onCreateSaga from './onCreate.saga';
 
 
 // rootSaga is the primary saga.
@@ -26,5 +27,6 @@ export default function* rootSaga() {
     playMetaSaga(),
     partSaga(),
     textSaga(),
+    onCreateSaga(),
   ]);
 }

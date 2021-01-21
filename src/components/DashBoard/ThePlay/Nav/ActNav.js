@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 
 
 const ActButton = styled.button `
@@ -13,10 +13,10 @@ const ActButton = styled.button `
 
 export default function ActNav(act){
     const dispatch = useDispatch();
-    const chapters = useSelector(state => state.chapter);
     const setActtoRender = (actNumber) => {
         dispatch({type: 'SET_ACT_VIEW', payload: actNumber});
     }
+
 
     return(
         <ActButton onClick={()=>setActtoRender(act.act.section)}>{act.act.section}</ActButton>

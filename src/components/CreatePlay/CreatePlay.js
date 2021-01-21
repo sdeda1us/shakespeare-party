@@ -24,14 +24,12 @@ function CreatePlay() {
     const user = useSelector(state => state.user.id);
     const playList = useSelector(state=> state.allPlays);
     //populates the dropdown list with shakespeare plays on page load
-    useEffect(() => {dispatch({type: 'FETCH_ALL_PLAYS'})}, []);
+    useEffect(() => {dispatch({type: 'FETCH_ALL_PLAYS'})}, [dispatch]);
 
     const submit = (event) => {
         event.preventDefault();
         const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: user, joinCode:inputCode};
-        console.log(formPacket);
-        dispatch({type: 'POST_PLAY_EVENT', payload: formPacket});
-        dispatch({type: 'UPDATE_USER', payload: {inputCode: formPacket.joinCode, user: formPacket.userId}});
+        dispatch({type:'CREATE_PLAY_INSTANCE', payload: formPacket});
         history.push('/dashboard');
     }
 
