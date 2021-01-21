@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux';
 import PartButtons from './PartButtons/PartButtons';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const TableCell = styled.td `
     border-bottom: 1px solid black;
 `
@@ -22,7 +23,6 @@ export default function MyLines() {
             }
         })
     }
-    
     
     return(
         <div>

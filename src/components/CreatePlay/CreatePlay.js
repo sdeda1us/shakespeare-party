@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const SubmitButton = styled.button `
     width: 4rem;
     height: 2rem;

@@ -6,6 +6,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const FancyLink = styled.span `
   font: 40px;
   color: #020300;

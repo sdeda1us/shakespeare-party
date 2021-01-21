@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const Banner = styled.div 
 `
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');

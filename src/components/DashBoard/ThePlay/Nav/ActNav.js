@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {useDispatch} from 'react-redux';
 
-
+//-------------------------------Styled Components--------------------------//
 const ActButton = styled.button `
     height: 20px;
     width: 15%;

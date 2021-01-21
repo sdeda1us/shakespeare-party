@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const MenuButton = styled.button `
     width: 12rem;
     margin-left: 10%;
@@ -14,8 +15,6 @@ const MenuButton = styled.button `
     border-radius: 120px;
     font-family: 'Calligraffitti', cursive;
 `
-
-
 const SelectGrand = styled.select `
     width: 60%;
     margin-left: 5%;

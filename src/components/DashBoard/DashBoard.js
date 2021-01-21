@@ -6,12 +6,12 @@ import MyLines from './MyLines/MyLines';
 import ThePlay from './ThePlay/ThePlay';
 import Runner from './Runner.jsx';
 
+//-------------------------------Styled Components--------------------------//
 const MainSpace = styled.div `
     width: 95%; 
     margin: auto;
     background-color: white;
 `
-
 const MenuSide = styled.div `
     display: flex;
     margin: auto;
@@ -23,7 +23,6 @@ const ViewSide = styled.div `
     margin: 5% 2% 0% 2%;
     padding: 2%;
 `
-
 const MenuButton = styled.button `
     padding: 5%;
     width: 11rem;

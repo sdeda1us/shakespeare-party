@@ -4,6 +4,7 @@ import ActNav from './Nav/ActNav';
 import SceneNav from './Nav/SceneNav';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const TableCell = styled.td `
     border-bottom: 1px solid black;
 `

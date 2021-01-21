@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components';
 import {useDispatch, useSelector} from 'react-redux';
 
+//-------------------------------Styled Components--------------------------//
 const SceneButton = styled.button `
     height: 20px;
     width: 12rem;

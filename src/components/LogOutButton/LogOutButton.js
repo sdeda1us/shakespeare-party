@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const GoodByeButton = styled.button  `
   width: 4rem;
   height: 2rem;

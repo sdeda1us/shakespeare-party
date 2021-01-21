@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import TakenPartList from './TakenPartList/TakenPartList';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const TableSpace = styled.div `
     display: flex;
     justify-content: center;
