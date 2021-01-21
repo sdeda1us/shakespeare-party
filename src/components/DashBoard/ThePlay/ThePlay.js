@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ActNav from './Nav/ActNav';
 import SceneNav from './Nav/SceneNav';
@@ -30,7 +30,7 @@ export default function ThePlay() {
         dispatch({type: 'FETCH_CHAPTERS', payload: {workid: playMeta.workid}});
         dispatch({type: 'FETCH_ACTS', payload: {workid: playMeta.workid}});
         dispatch({type:'FETCH_PLAY', payload: {workid: playMeta.workid}});
-        }, []);
+        }, [dispatch, playMeta.workid]);
 
 
     return(

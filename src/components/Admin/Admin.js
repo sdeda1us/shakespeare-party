@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom';
 import MakeDirector from './MakeDirector/MakeDirector';
 import JoinCode from './JoinCode/JoinCode';
 import RenameTroupe from './RenameTroupe/RenameTroupe';
@@ -56,10 +55,8 @@ const TextDisplay = styled.p `
 export default function Admin() {
     //defines dispatch and usehistory functions
     const dispatch = useDispatch();
-    const history = useHistory();
     const [viewChoice, setViewChoice] = useState(0);
     //loads from redux store
-    const playMeta = useSelector(state => state.playMeta);
     const userInfo = useSelector(state => state.user);
     
     

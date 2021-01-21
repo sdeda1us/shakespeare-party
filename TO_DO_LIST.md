@@ -38,6 +38,7 @@
 [ ] - parts are not getting pulled down for characters in multiple plays
 [ ] - get charnames and not charid for play text and mylines
 [ ] - security on routes
+[ ] - empty redux state on exit
 
 ## - delete troupe 
 [ ] - more stuff needs to be erased from the db on delete troupe

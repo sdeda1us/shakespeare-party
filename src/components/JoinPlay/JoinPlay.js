@@ -12,7 +12,7 @@ function JoinPlay() {
     const allTroupes = useSelector(state => state.allPlayEvents);
     const userId = useSelector(state => state.user.id)
     //populates the dropdown list with shakespeare plays on page load
-    useEffect(() => {dispatch({type: 'FETCH_ALL_PLAY_EVENTS'})}, []);
+    useEffect(() => {dispatch({type: 'FETCH_ALL_PLAY_EVENTS'})}, [dispatch]);
 
     const submit = (event) => {
         event.preventDefault();
