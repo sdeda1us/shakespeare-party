@@ -29,9 +29,9 @@
 
 ## - Page Load Sequence Problems
 [x] - claim parts in dashboard
-[ ] - Initial troupe and play name for dashboard
+[x] - Initial troupe and play name for dashboard
 [x] - Remove actor from role in admin
-[ ] - MyLines should have data without needing to go through ClaimParts
+[x] - MyLines should have data without needing to go through ClaimParts
 
 ## - Other niggles
 [x] - sidebar resizes on parts table load
