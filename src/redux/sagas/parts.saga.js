@@ -1,4 +1,4 @@
-import { put, call, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 function* partSaga() {
@@ -10,9 +10,7 @@ function* partSaga() {
 
 function* fetchCharText(action) {
     try {
-        console.log('calling FETCH CHARTEXT SAGA')
         const response = yield axios.get (`/api/parts/${action.payload.playCode}`);
-        
         yield put({type: 'SET_CHARACTERS', payload: response.data});
         yield put({type: 'FETCH_TAKEN_PARTS', payload: action.payload.troupeCode});
     } catch(error){
@@ -43,7 +41,7 @@ function* fetchTakenParts(action){
 
 function* deleteTakenParts(action){
     console.log(action.payload);
-    yield call(axios.delete, `/api/taken/${action.payload.role}`);
+    yield axios.delete (`/api/taken/${action.payload.role}`);
     yield put({type: 'FETCH_TAKEN_PARTS', payload: action.payload.joinCode});
 }
 

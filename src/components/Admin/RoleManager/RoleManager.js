@@ -14,8 +14,8 @@ export default function RoleManager() {
     const takenParts = useSelector(state => state.takenParts)
 
     useEffect(() => 
-        {dispatch({type: 'FETCH_TAKEN_PARTS', payload:user.troupe_code})}
-        , [dispatch, user.troupe.code]);
+        {dispatch({type: 'FETCH_TAKEN_PARTS', payload: user.troupe_code})}
+        , [dispatch, user.troupe_code]);
 
 
     return (

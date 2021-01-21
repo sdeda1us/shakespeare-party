@@ -16,16 +16,13 @@ export default function ActNav(c){
     const playText = useSelector(state => state.playText);
     let linesArray = [];
         
-    
     useEffect(() => {
         }, [sceneView]);
 
     const preparePlayText = (sceneNumber) => {
-        dispatch({type: 'SET_SCENE_VIEW', payload: sceneNumber});
         for (let i = 0; i < playText.length; i++){
             let pt = playText[i];
-            console.log('logging locations', pt.section, pt.chapter, actView, sceneView)
-            if(pt.section === actView && pt.chapter === sceneView){
+            if(pt.section === actView && pt.chapter === sceneNumber){
                 linesArray.push({Act: pt.section, Scene: pt.chapter, Role: pt.charid, Line: pt.plaintext})
             }   
         }

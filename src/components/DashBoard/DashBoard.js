@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 import ViewParts from './ViewParts/ViewParts';
@@ -44,6 +44,13 @@ export default function DashBoard() {
     const playMeta = useSelector(state => state.playMeta);
     const user = useSelector(state => state.user);
     
+    useEffect(() => {
+        dispatch({type: 'GRAB_TEXT_DATA', payload: {workid: playMeta.workid, troupeCode: user.troupe_code}});
+        // dispatch({type: 'FETCH_CHAPTERS', payload: {workid: playMeta.workid}});
+        // dispatch({type: 'FETCH_ACTS', payload: {workid: playMeta.workid}});
+        // dispatch({type:'FETCH_PLAY', payload: {workid: playMeta.workid}});
+    }, [dispatch, viewChoice]);
+
     return(
         <MainSpace>
             <Runner />
@@ -52,7 +59,7 @@ export default function DashBoard() {
                         <MenuButton 
                             onClick={()=>
                                 {setViewChoice(1); 
-                                 dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid, troupeCode: user.troupe_code}})
+                                //  dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid, troupeCode: user.troupe_code}})
                                 }     
                             }>
                         View Parts

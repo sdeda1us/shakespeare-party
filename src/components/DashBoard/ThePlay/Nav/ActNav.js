@@ -10,7 +10,6 @@ const ActButton = styled.button `
     color: white;
 `
 
-
 export default function ActNav(act){
     const dispatch = useDispatch();
     const setActtoRender = (actNumber) => {
