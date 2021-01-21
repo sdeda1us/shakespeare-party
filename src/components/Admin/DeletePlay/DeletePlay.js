@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const MenuButton = styled.button `
     margin-left: 40%;
     width: 14rem;

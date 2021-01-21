@@ -6,6 +6,7 @@ import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const NavBanner = styled.div `
   width: 100%;
   background-color: #7D8CA3;

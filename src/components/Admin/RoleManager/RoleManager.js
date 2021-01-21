@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import TakenPartList from './TakenPartList/TakenPartList';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const TableSpace = styled.div `
     display: flex;
     justify-content: center;
@@ -14,8 +15,8 @@ export default function RoleManager() {
     const takenParts = useSelector(state => state.takenParts)
 
     useEffect(() => 
-        {dispatch({type: 'FETCH_TAKEN_PARTS', payload:user.troupe_code})}
-        , [dispatch, user.troupe.code]);
+        {dispatch({type: 'FETCH_TAKEN_PARTS', payload: user.troupe_code})}
+        , [dispatch, user.troupe_code]);
 
 
     return (

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const FormBox = styled.form `
   background-color: white;
   color: black;

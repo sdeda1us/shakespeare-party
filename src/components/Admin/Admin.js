@@ -7,20 +7,16 @@ import DeletePlay from './DeletePlay/DeletePlay';
 import RoleManager from './RoleManager/RoleManager';
 import styled from 'styled-components';
 
-
+//-------------------------------Styled Components--------------------------//
 const MainSpace = styled.div `
     width: 95%; 
     padding: 2% 0% 2% 0%;
     margin: auto;
     background-color: white;
 `
-
-
-
 const Header = styled.div `
     text-align: center;
 `
-
 const MenuBar = styled.div `
     display: inline-flex;
     width: 100%;
@@ -35,7 +31,6 @@ const View = styled.div `
     margin: 0% 2% 0% 2%;
     padding: 2%;
 `
-
 const MenuButton = styled.button `
     padding: 5%;
     width: 11rem;

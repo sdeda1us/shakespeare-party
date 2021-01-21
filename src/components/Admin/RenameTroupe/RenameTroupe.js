@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
 
+//-------------------------------Styled Components--------------------------//
 const MenuButton = styled.button `
     width: 8rem;
     border: 3px solid white;
@@ -15,7 +16,6 @@ const TextDisplay = styled.p `
     font-size: 30px;
     text-align: center;
 `
-
 const InputField = styled.input `
     width: 20rem;
 `
