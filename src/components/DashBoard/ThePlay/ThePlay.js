@@ -2,7 +2,19 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import ActNav from './Nav/ActNav';
 import SceneNav from './Nav/SceneNav';
+import styled from 'styled-components';
 
+const TableCell = styled.td `
+    border-bottom: 1px solid black;
+`
+const TableHeader = styled.th `
+    border-bottom: 1px solid black;
+`
+const SceneContainer= styled.div `
+    display: inline-flex:
+    justify-content: flex-start;
+    flex-wrap: wrap;
+`
 
 
 export default function ThePlay() {
@@ -24,24 +36,27 @@ export default function ThePlay() {
     return(
         <div>
             <div>
-                <h2>Act</h2>
+                <h2>Select Act</h2>
                 {acts.map(act => (<ActNav act={act} /> ))}
+                <h2>Select Scene</h2>
+                <SceneContainer>
                 {chapters.map((c)=>(
-                    <p>{actView === c.section && <SceneNav c={c}/>}</p>
+                    <div>{actView === c.section && <SceneNav c={c}/>}</div>
                 ))}
+                </SceneContainer>
             </div>
             <div>
                 <table>
-                    <tablehead>
+                    <thead>
                         <tr>
-                            <th>Act</th>
-                            <th>Scene</th>
-                            <th>Role</th>
-                            <th>Line</th>
+                            <TableHeader>Act</TableHeader>
+                            <TableHeader>Scene</TableHeader>
+                            <TableHeader>Role</TableHeader>
+                            <TableHeader>Line</TableHeader>
                         </tr>
-                    </tablehead>
+                    </thead>
                     <tbody>
-                        {readingText.map(rt=> (<tr><td>{rt.Act}</td><td>{rt.Scene}</td><td>{rt.Role}</td><td>{rt.Line}</td></tr>))}
+                        {readingText.map(rt=> (<tr><TableCell>{rt.Act}</TableCell><TableCell>{rt.Scene}</TableCell><TableCell>{rt.Role}</TableCell><TableCell>{rt.Line}</TableCell></tr>))}
                     </tbody>
                 </table>
             </div>

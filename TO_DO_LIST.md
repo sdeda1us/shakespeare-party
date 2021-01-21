@@ -13,8 +13,8 @@
 [x] Delete instances of play events
 
 # Main Objectives - Pages
-[ ] Login and conditional routing
-[ ] Fix the Navbar so it display links conditionally 
+[x] Login and conditional routing
+[x] Fix the Navbar so it display links conditionally 
 
 ## Cleanup considerations
 [ ] - code comments
@@ -22,7 +22,7 @@
 [ ] - error handling
 [ ] - destructuring code to mkae it more DRY
 [ ] - variable name consisnecy for easier following of code
-[ ] - mess about with style/appearance - clean -professional
+[x] - mess about with style/appearance - clean -professional
 [ ] - make readme look good
 [ ] - .js to .jsx
 [ ] - export and delete this file when completed 
@@ -30,13 +30,14 @@
 ## - Page Load Sequence Problems
 [x] - claim parts in dashboard
 [ ] - Initial troupe and play name for dashboard
-[ ] - Remove actor from role in admin
+[x] - Remove actor from role in admin
 [ ] - MyLines should have data without needing to go through ClaimParts
 
 ## - Other niggles
-[ ] - sidebar resizes on parts table load
+[x] - sidebar resizes on parts table load
 [ ] - parts are not getting pulled down for characters in multiple plays
-[ ] - 
+[ ] - get charnames and not charid for play text and mylines
+[ ] - security on routes
 
 ## - delete troupe 
 [ ] - more stuff needs to be erased from the db on delete troupe

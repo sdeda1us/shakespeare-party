@@ -2,6 +2,13 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {useDispatch, useSelector} from 'react-redux';
 
+const SceneButton = styled.button `
+    height: 20px;
+    width: 12rem;
+    background-color: black;
+    color: white;
+`
+
 export default function ActNav(c){
     const dispatch = useDispatch();
     const actView = useSelector(state => state.actView);
@@ -27,7 +34,7 @@ export default function ActNav(c){
     
 
     return(
-        <button onClick={()=>preparePlayText(c.c.chapter)}>Scene &nbsp;{c.c.chapter}: &nbsp;{c.c.description}</button>
+        <SceneButton onClick={()=>preparePlayText(c.c.chapter)}>Scene &nbsp;{c.c.chapter}: &nbsp;{c.c.description}</SceneButton>
     )
 
 }

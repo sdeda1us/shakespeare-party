@@ -1,7 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import PartButtons from './PartButtons/PartButtons';
+import styled from 'styled-components';
 
+const TableCell = styled.td `
+    border-bottom: 1px solid black;
+`
+const TableHeader = styled.th `
+    border-bottom: 1px solid black;
+`
 
 export default function MyLines() {
     const user = useSelector(state => state.user);
@@ -26,14 +33,20 @@ export default function MyLines() {
                 <table>
                     <thead>
                         <tr>
-                            <th>Act</th>
-                            <th>Scene</th>
-                            <th>Role</th>
-                            <th>Line</th>
+                            <TableHeader>Act</TableHeader>
+                            <TableHeader>Scene</TableHeader>
+                            <TableHeader>Role</TableHeader>
+                            <TableHeader>Line</TableHeader>
                         </tr>
                     </thead>
                     <tbody>
-                    {charLines.map((cl)=>(<tr><td>{cl.Act}</td><td>{cl.Scene}</td><td>{cl.Role}</td><td><p>{cl.Line}</p></td></tr>))}
+                    {charLines.map((cl)=>(
+                        <tr>
+                            <TableCell>{cl.Act}</TableCell>
+                            <TableCell>{cl.Scene}</TableCell>
+                            <TableCell>{cl.Role}</TableCell>
+                            <TableCell><p>{cl.Line}</p></TableCell>
+                        </tr>))}
                     </tbody>
                 </table>
                 

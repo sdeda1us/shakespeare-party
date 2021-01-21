@@ -48,6 +48,10 @@ const OrBox = styled.div `
   margin-right: 10%;
 `
 
+
+
+
+
 function UserPage() {
   // this component doesn't do much to start, just renders some user info to the DOM
   const [display, setDisplay] = useState(true);

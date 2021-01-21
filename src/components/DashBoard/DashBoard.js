@@ -19,16 +19,15 @@ const TopSpace = styled.div `
 const TopInfo = styled.div `
     font-size: 25px;
 `
-
 const MenuSide = styled.div `
-    display: inline-flex;
+    display: flex;
     margin: auto;
-    justify-content: space-between; 
+    justify-content: center; 
 `
 const ViewSide = styled.div `
-    border: 3px solid #ED60E8;
+    border: 3px solid black;
     border-radius: 10px;
-    margin: 0% 2% 0% 2%;
+    margin: 5% 2% 0% 2%;
     padding: 2%;
 `
 
@@ -41,6 +40,7 @@ const MenuButton = styled.button `
     color: white;
     font-size: 20px;
     border-radius: 10px;
+    font-family: 'Calligraffitti', cursive;
 `
 
 export default function DashBoard() {
@@ -65,20 +65,24 @@ export default function DashBoard() {
                 {playMeta && <TopInfo>Troupe Name: {playMeta.troupe_name}</TopInfo>}
                 {playMeta && <TopInfo>Performing: {playMeta.title} </TopInfo>}
             </TopSpace>
-           
                 <MenuSide>
-                    <MenuButton 
-                        onClick={()=>
-                            {setViewChoice(1); 
-                            {if(playMeta.workid != undefined) {
-                                dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid, troupeCode: user.troupe_code}})
-                            }
-                                
-                        }}}>
-                    View Parts
-                    </MenuButton>
-                    <MenuButton onClick={()=>setViewChoice(2)}>My Lines</MenuButton>
-                    <MenuButton onClick={()=>setViewChoice(3)}>The Play</MenuButton>
+                    <div>
+                        <MenuButton 
+                            onClick={()=>
+                                {setViewChoice(1); 
+                                {if(playMeta.workid != undefined) {
+                                    dispatch({type: 'FETCH_CHARTEXT', payload: {playCode: playMeta.workid, troupeCode: user.troupe_code}})
+                                }     
+                            }}}>
+                        View Parts
+                        </MenuButton>
+                    </div>
+                    <div>
+                        <MenuButton onClick={()=>setViewChoice(2)}>My Lines</MenuButton>
+                    </div>
+                    <div>
+                        <MenuButton onClick={()=>setViewChoice(3)}>The Play</MenuButton>
+                    </div>
                 </MenuSide>
                 <ViewSide>
                 {viewChoice === 0 ? <p>Choose an option from the menu</p>: 
