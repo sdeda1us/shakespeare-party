@@ -10,6 +10,11 @@ const TableCell = styled.td `
 const TableHeader = styled.th `
     border-bottom: 1px solid black;
 `
+const SceneContainer= styled.div `
+    display: inline-flex:
+    justify-content: flex-start;
+    flex-wrap: wrap;
+`
 
 
 export default function ThePlay() {
@@ -31,11 +36,14 @@ export default function ThePlay() {
     return(
         <div>
             <div>
-                <h2>Act</h2>
+                <h2>Select Act</h2>
                 {acts.map(act => (<ActNav act={act} /> ))}
+                <h2>Select Scene</h2>
+                <SceneContainer>
                 {chapters.map((c)=>(
-                    <p>{actView === c.section && <SceneNav c={c}/>}</p>
+                    <div>{actView === c.section && <SceneNav c={c}/>}</div>
                 ))}
+                </SceneContainer>
             </div>
             <div>
                 <table>

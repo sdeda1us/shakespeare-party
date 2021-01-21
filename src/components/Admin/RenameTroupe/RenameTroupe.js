@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const MenuButton = styled.button `
     width: 8rem;
-    margin-left: 40%;
     border: 3px solid white;
     background-color: black;
     color: white;
@@ -15,6 +14,15 @@ const MenuButton = styled.button `
 const TextDisplay = styled.p `
     font-size: 30px;
     text-align: center;
+`
+
+const InputField = styled.input `
+    width: 20rem;
+`
+const Row = styled.div `
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
 `
 
 export default function RenameTroupe() {
@@ -29,8 +37,36 @@ export default function RenameTroupe() {
 
     return (
         <div>
-            {isEditable ? <div><TextDisplay>Troupe Name:</TextDisplay> <input type="text" onChange={(event)=>{setNewName(event.target.value)}}></input></div> : <TextDisplay>Troupe Name: {playMeta.troupe_name}</TextDisplay>}
-            {!isEditable ? <MenuButton onClick={()=>{setEditable(true); console.log(isEditable)}}>Edit</MenuButton> : <MenuButton onClick={()=>{setEditable(false); dispatch({type:'EDIT_TROUPE_NAME', payload: {name:newName, joinCode:playMeta.join_code}})}}>Submit</MenuButton>}
+            <Row>
+                {isEditable ? 
+                    <div>
+                        <TextDisplay>Troupe Name:</TextDisplay> 
+                        <InputField 
+                            type="text" 
+                            onChange={(event)=>{setNewName(event.target.value)}}>
+                        </InputField>
+                    </div> : 
+                        <TextDisplay>
+                            Troupe Name: {playMeta.troupe_name}
+                        </TextDisplay>
+                }
+            </Row>
+            <Row>
+            {!isEditable ? 
+                    <MenuButton 
+                        onClick={()=>{setEditable(true);}}>
+                        Edit
+                    </MenuButton> : 
+                    <MenuButton 
+                        onClick={()=>{
+                            setEditable(false); 
+                            dispatch({type:'EDIT_TROUPE_NAME', 
+                                payload: {name:newName, joinCode:playMeta.join_code}})}}>
+                        Submit
+                    </MenuButton>
+                }
+                {isEditable ? <MenuButton onClick={()=>{setEditable(false)}}>Cancel</MenuButton> : <></>}
+            </Row>
         </div>
     )
 }

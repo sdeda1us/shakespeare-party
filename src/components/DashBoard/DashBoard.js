@@ -19,7 +19,6 @@ const TopSpace = styled.div `
 const TopInfo = styled.div `
     font-size: 25px;
 `
-
 const MenuSide = styled.div `
     display: flex;
     margin: auto;
@@ -41,6 +40,7 @@ const MenuButton = styled.button `
     color: white;
     font-size: 20px;
     border-radius: 10px;
+    font-family: 'Calligraffitti', cursive;
 `
 
 export default function DashBoard() {

@@ -6,6 +6,8 @@ import {useDispatch, useSelector} from 'react-redux';
 const ActButton = styled.button `
     height: 20px;
     width: 15%;
+    background-color: black;
+    color: white;
 `
 
 

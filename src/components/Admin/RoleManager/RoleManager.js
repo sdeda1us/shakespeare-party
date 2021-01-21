@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import TakenPartList from './TakenPartList/TakenPartList';
+import styled from 'styled-components';
 
+const TableSpace = styled.div `
+    display: flex;
+    justify-content: center;
+`
 
 export default function RoleManager() {
     const dispatch = useDispatch();
@@ -14,7 +19,7 @@ export default function RoleManager() {
 
 
     return (
-        <div>
+        <TableSpace>
             <table>
                 <thead>
                     <tr>
@@ -27,7 +32,7 @@ export default function RoleManager() {
                     {takenParts.map((tp)=> <TakenPartList tp={tp}/>)}
                 </tbody>
             </table>
-        </div>
+        </TableSpace>
     )
 
 }

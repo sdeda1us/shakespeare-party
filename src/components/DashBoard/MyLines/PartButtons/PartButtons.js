@@ -1,5 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import styled from 'styled-components';
+
+const MenuButton = styled.button `
+    width: 12rem;
+    border: 3px solid white;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 120px;
+`
 
 export default function PartButtons(mp){
     const dispatch = useDispatch();
@@ -17,6 +27,6 @@ export default function PartButtons(mp){
     }
 
     return (
-        <button onClick={() => getPartText()}>{mp.mp}</button>
+        <MenuButton onClick={() => getPartText()}>{mp.mp}</MenuButton>
     )
 }
