@@ -29,7 +29,7 @@ function CreatePlay() {
 
     const submit = (event) => {
         event.preventDefault();
-        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: user, joinCode:inputCode};
+        const formPacket = {troupeName: troupeName, playChoice: playChoice, userId: user.id, joinCode:inputCode};
         dispatch({type:'CREATE_PLAY_INSTANCE', payload: formPacket});
         history.push('/dashboard');
     }
