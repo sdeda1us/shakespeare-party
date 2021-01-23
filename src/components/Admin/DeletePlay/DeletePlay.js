@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import styled from 'styled-components';
+import swal from 'sweetalert';
 
 //-------------------------------Styled Components--------------------------//
 const MenuButton = styled.button `
@@ -22,11 +23,26 @@ const TextDisplay = styled.p `
 export default function DeletePlay() {
 
     const deletePlayEvent = (event) => {
-        alert('You are about to delete your play event, is this what you want?');
-        const joinCode = playMeta.join_code;
-        console.log('joinCode is', joinCode);
-        dispatch({type: 'DELETE_TROUPE', payload: {joinCode: joinCode[0]}});
-        dispatch({type: 'DELETE_PLAY_EVENT', payload: {joinCode: userInfo.troupe_code}});
+        swal('You are about to delete your play event, is this REALLY what you want?', 
+        {buttons: {
+                cancel: 'cancel',   
+                delete: {
+                    text: 'delete',
+                    value: true,
+                }
+            }
+        })
+        .then((value) => {
+            if(value) {
+                const joinCode = playMeta.join_code;
+                dispatch({type: 'DELETE_TROUPE', payload: {joinCode: joinCode[0]}});
+                dispatch({type: 'DELETE_PLAY_EVENT', payload: {joinCode: userInfo.troupe_code}});
+                swal('Deleted your production. Come perform with us again some time!')
+            } else {
+                swal('Aborting the delete');
+            }
+        })
+        
     }
 
     const dispatch = useDispatch();
