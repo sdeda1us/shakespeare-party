@@ -35,7 +35,7 @@
 
 ## - Other niggles
 [x] - sidebar resizes on parts table load
-[ ] - parts are not getting pulled down for characters in multiple plays
+[x] - parts are not getting pulled down for characters in multiple plays
 [ ] - get charnames and not charid for play text and mylines
 [ ] - security on routes
 [ ] - empty redux state on exit
