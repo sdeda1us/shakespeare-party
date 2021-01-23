@@ -27,14 +27,14 @@ The home page
 The play King Henry V rendered in the application
 ![Home Page](images/shake_party_1.png)
 
-##Installation
+## Installation
 
-###Required packages:
+### Required packages:
 - gitHub repository files
 - Node package manager (npm)
 - postgreSQL
 
-###Instructions
+### Instructions
 
 1. Fork and clone the repository from gitHub
 2. Create a database named 'prime_app' in postgreSQL
@@ -46,7 +46,7 @@ The play King Henry V rendered in the application
 8. Open another terminal window, and navigate to the repo folder
 9. At the command line, enter 'npm run client'
 
-##Built With
+## Built With
 
 - html
 - css
@@ -57,7 +57,7 @@ The play King Henry V rendered in the application
 - Redux
 - SweetAlert
 
-###Special thanks to George Mason University's OpenSourceShakespeare Project for creating an open source mySQL database that was lightly modified for use in this application.
+###Special thanks to George Mason University's [OpenSourceShakespeare](https://www.opensourceshakespeare.org/) Project for creating an open source mySQL database that was lightly modified for use in this application.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
